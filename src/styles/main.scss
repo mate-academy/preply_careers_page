@@ -2,6 +2,17 @@
 @import "fonts";
 @import "typography";
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1348px,
+);
+
+$grid-gutter-width: 20px;
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
 body {
   background: $c-gray;
 }

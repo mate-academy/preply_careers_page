@@ -1,0 +1,29 @@
+.btn {
+  width: 360px;
+  height: 67px;
+  border-radius: 10px;
+  background-color: $green;
+
+  color: #fff;
+  font-weight: 500;
+
+  &:hover {
+    background-color: $green-light;
+    color: #fff;
+  }
+
+  &:focus {
+    background-color: #fff;
+    color: $green;
+  }
+
+  &--light {
+    background-color: #fff;
+    color: #3e929b;
+
+    &:focus {
+      background-color: $dark;
+      color: #fff;
+    }
+  }
+}

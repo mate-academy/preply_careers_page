@@ -1,5 +1,5 @@
 .people-behind {
-  padding: 90px;
+  padding: 90px 48px 60px;
   text-align: center;
 
   &__title {
@@ -22,6 +22,7 @@
 
     &--wrp {
       height: 300px;
+      margin-bottom: 20px;
     }
   }
 }

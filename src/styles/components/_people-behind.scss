@@ -5,12 +5,14 @@
   &__title {
     margin-bottom: 22px;
     font-size: 52px;
+    line-height: 45px;
     color: $title-color-dark;
   }
 
   &__description {
     margin-bottom: 45px;
     font-size: 24px;
+    line-height: 36px;
     color: $text-color-dark;
   }
 
@@ -23,6 +25,36 @@
     &--wrp {
       height: 300px;
       margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 995px) {
+    &__title {
+      margin-bottom: 21px;
+      font-size: 38px;
+    }
+
+    &__description {
+      margin-bottom: 35px;
+      font-size: 16px;
+    }
+
+    &__img--wrp {
+      height: 180px;
+
+      &:first-child {
+        order: -2;
+      }
+
+      &:nth-child(4) {
+        order: -1;
+      }
+    }
+  }
+
+  @media (max-width: 495px) {
+    &__img--wrp {
+      height: 80px;
     }
   }
 }

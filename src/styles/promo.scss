@@ -1,0 +1,33 @@
+.promo {
+  min-height: 630px;
+  background: linear-gradient(180deg, rgba(47, 61, 77, 0.6) 0%,
+  rgba(47, 61, 77, 0.3) 97.92%),
+    url("../images/promo/bg-promo.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: rgb(255, 255, 255);
+
+  &__top {
+    align-items: center;
+  }
+
+  &__logo {
+    background-image: url("../images/promo/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 200px;
+    height: 100px;
+  }
+
+  &__privacy {
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

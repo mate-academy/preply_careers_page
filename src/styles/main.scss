@@ -2,23 +2,23 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1348px,
+  xl: 1328px,
 );
 
 $grid-gutter-width: 20px;
 
 @import "node_modules/bootstrap/scss/bootstrap";
+@import "reset";
 @import "utils";
 @import "fonts";
 @import "typography";
 
 body {
   background: $c-gray;
-  font-family: Roboto, serif;
-  font-size: 24px;
-  font-weight: 400;
+  @extend %p;
 }
 
+@import "btn";
 @import "slogan";
 @import "./components/people-behind";
 @import "btn";

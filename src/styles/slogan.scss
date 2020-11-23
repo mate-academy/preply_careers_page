@@ -1,9 +1,12 @@
 .slogan {
-  min-height: 460px;
   display: flex;
   align-items: center;
   position: relative;
   background-color: $green;
+
+  &--red {
+    background-color: $red-light;
+  }
 
   &__wrapper {
     display: flex;
@@ -21,7 +24,6 @@
   }
 
   &__img {
-    // min-height: 100%;
     align-self: flex-end;
   }
 }

@@ -30,4 +30,21 @@
       align-self: center;
     }
   }
+
+  &__btn {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 1200px) {
+    padding-top: 33px;
+
+    &__title {
+      margin-bottom: 21px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  }
 }

@@ -1,0 +1,28 @@
+.footer {
+  background-color: $dark;
+  min-height: 230px;
+
+  &__logo {
+    background-image: url("../images/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    width: 200px;
+    height: 100px;
+    margin-bottom: 50px;
+  }
+
+  &__copyright {
+    color: #fff;
+  }
+
+  &__privacy {
+    text-align: center;
+    font-size: 21px;
+    line-height: 32px;
+
+    a {
+      color: #fff;
+    }
+  }
+}

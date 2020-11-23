@@ -25,5 +25,9 @@
 
   &__img {
     align-self: flex-end;
+
+    &--center {
+      align-self: center;
+    }
   }
 }

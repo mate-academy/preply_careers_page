@@ -3,6 +3,7 @@
   align-items: center;
   position: relative;
   background-color: $green;
+  padding: 0 47px;
 
   &--red {
     background-color: $red-light;
@@ -25,5 +26,27 @@
 
   &__img {
     align-self: flex-end;
+
+    &--center {
+      align-self: center;
+    }
+  }
+
+  &__btn {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 1200px) {
+    padding: 0 37px;
+    padding-top: 33px;
+
+    &__title {
+      margin-bottom: 21px;
+    }
+
+    &__text {
+      margin-bottom: 20px;
+      text-align: center;
+    }
   }
 }

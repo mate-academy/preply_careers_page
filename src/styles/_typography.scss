@@ -1,7 +1,11 @@
-h2 {
+h1,
+h2,
+h3,
+button {
   @extend %h2;
 }
 
-p {
+p,
+span {
   @extend %p;
 }

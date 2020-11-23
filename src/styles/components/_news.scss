@@ -1,0 +1,48 @@
+.news {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: start;
+
+    padding: 77px 10px 50px 25px;
+
+    border-radius: 20px;
+
+    &--green {
+      @include newsCard(
+        rgba(0, 152, 0, 0.19),
+        #009800,
+        42px
+      );
+    }
+
+    &--gray {
+      @include newsCard(
+        rgba(60,59,59,0.19),
+        #3C3B3B,
+        35px
+      );
+    }
+
+    &--blue {
+      @include newsCard(
+        rgba(0, 153, 138, 0.14),
+        #00998A,
+        30px
+      );
+    }
+
+  }
+
+  &__quotes {
+    font-weight: 700;
+    font-size: 144px;
+    line-height: 60px;
+  }
+
+  &__description {
+    color: $text-color-dark;
+    font-size: inherit;
+  }
+}

@@ -1,0 +1,16 @@
+.in-news {
+  padding: 90px 48px 60px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 22px;
+    font-size: 52px;
+    color: $title-color-dark;
+  }
+
+  &__description {
+    margin-bottom: 45px;
+    font-size: 24px;
+    color: $text-color-dark;
+  }
+}

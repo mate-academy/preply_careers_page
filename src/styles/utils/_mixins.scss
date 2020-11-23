@@ -4,3 +4,9 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin newsCard($_backgrount-color, $_color, $_font-size) {
+  background-color: $_backgrount-color;
+  color: $_color;
+  font-size: $_font-size;
+}

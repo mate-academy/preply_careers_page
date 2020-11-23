@@ -1,0 +1,27 @@
+.people-behind {
+  padding: 90px;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 22px;
+    font-size: 52px;
+    color: $title-color-dark;
+  }
+
+  &__description {
+    margin-bottom: 45px;
+    font-size: 24px;
+    color: $text-color-dark;
+  }
+
+  &__img {
+    object-fit: cover;
+    height: inherit;
+    width: inherit;
+    border-radius: 10px;
+
+    &--wrp {
+      height: 300px;
+    }
+  }
+}

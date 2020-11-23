@@ -1,0 +1,44 @@
+.vacancies {
+  padding: 93px 47px 123px;
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  &__list {
+    margin-top: 93px;
+  }
+
+  &__item {
+    border-bottom: 1px solid #cbd0d3;
+  }
+
+  &__position {
+    font-weight: 700;
+    line-height: 70px;
+    color: $text-color-dark;
+  }
+
+  &__location {
+    font-weight: 700;
+    color: #b4bbbe;
+  }
+
+  &__btn {
+    width: 100%;
+    color: $green;
+    font-weight: 700;
+    text-align: right;
+    outline: none;
+
+    &:hover {
+      color: $green-light;
+    }
+
+    &:focus {
+      color: $green-light;
+      outline: none;
+    }
+  }
+}

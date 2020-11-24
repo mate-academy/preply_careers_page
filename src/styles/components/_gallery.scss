@@ -11,6 +11,8 @@
     border: none;
     border-radius: 10px;
 
+    @extend %h2;
+
     &::before {
       content: "";
       position: absolute;

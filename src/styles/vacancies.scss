@@ -1,5 +1,5 @@
 .vacancies {
-  padding: 93px 47px 123px;
+  padding: 93px 47px 60px;
 
   &__wrapper {
     display: flex;
@@ -26,6 +26,8 @@
   }
 
   &__btn {
+    font-family: Roboto, serif;
+    font-size: 24px;
     width: 100%;
     color: $green;
     font-weight: 700;

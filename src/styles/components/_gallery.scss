@@ -12,7 +12,21 @@
     color: $text-color-light;
     font-size: 50px;
     border: none;
+    outline: none;
     background-color: transparent;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      width: 0;
+      height: 10px;
+      background-color: $red-medium;
+      border-radius: 5px;
+      transform: translateX(-50%);
+      transition: width 0.3s;
+    }
 
     &::before {
       content: "";
@@ -21,7 +35,7 @@
       left: 50%;
       width: calc(100% - 20px);
       height: 100%;
-      background: #fff;
+      background-color: #fff;
       opacity: 0.4;
       transform: translateX(-50%);
       transition: width 0.3s;
@@ -29,6 +43,20 @@
 
     &:hover::before {
       width: 0;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--active {
+      &::before {
+        width: 0;
+      }
+
+      &::after {
+        width: calc(100% - 20px);
+      }
     }
 
     &--wrp {
@@ -48,10 +76,15 @@
   }
 
   &__photo {
+    display: none;
     object-fit: cover;
     height: inherit;
     width: inherit;
     border-radius: 20px;
+
+    &--show {
+      display: block;
+    }
 
     &--wrp {
       margin-bottom: 20px;
@@ -69,6 +102,11 @@
   @media (max-width: 994px) {
     &__controls {
       margin-bottom: 62px;
+    }
+
+    &__button::after {
+      bottom: -15px;
+      height: 5px;
     }
 
     &__group {

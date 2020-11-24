@@ -1,7 +1,7 @@
 {
   "name": "preply_careers_page",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "init": "mate-scripts init",
     "start": "mate-scripts start",

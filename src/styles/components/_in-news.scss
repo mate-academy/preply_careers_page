@@ -27,4 +27,25 @@
       grid-template-columns: 421px;
     }
   }
+
+  @media (max-width: 995px) {
+    padding: 24px;
+
+    &__title {
+      margin-bottom: 32px;
+      font-size: 38px;
+    }
+
+    &__description {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    &__wrapper {
+      grid-template-columns: 327px;
+    }
+  }
 }

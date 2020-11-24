@@ -1,3 +1,6 @@
+// eslint-disable-next-line strict
+'use strict';
+
 const gallery = document.querySelector('.gallery');
 const buttons = gallery.querySelectorAll('.gallery__button');
 const photos = gallery.querySelectorAll('.gallery__photo');

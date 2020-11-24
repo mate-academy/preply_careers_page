@@ -4,9 +4,7 @@
 
   &__title {
     margin-bottom: 22px;
-    font-size: 52px;
-    line-height: 45px;
-    color: $title-color-dark;
+    @include title($title-color-dark);
   }
 
   &__description {
@@ -29,6 +27,8 @@
   }
 
   @media (max-width: 995px) {
+    padding: 50px 24px;
+
     &__title {
       margin-bottom: 21px;
       font-size: 38px;

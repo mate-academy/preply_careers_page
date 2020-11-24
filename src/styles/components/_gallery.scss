@@ -4,19 +4,22 @@
   }
 
   &__button {
-    position: relative;
-    height: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
     color: $text-color-light;
     font-size: 50px;
     border: none;
-    border-radius: 10px;
+    background-color: transparent;
 
     &::before {
       content: "";
       position: absolute;
       top: 0;
       left: 50%;
-      width: 100%;
+      width: calc(100% - 20px);
       height: 100%;
       background: #fff;
       opacity: 0.4;
@@ -28,20 +31,27 @@
       width: 0;
     }
 
-    &--kyiv {
-      background: url("./../images/whereToFind/kyiv/0.png") center no-repeat;
+    &--wrp {
+      position: relative;
+      height: 160px;
     }
+  }
 
-    &--barcelona {
-      background: url("./../images/whereToFind/barcelona/0.png") center no-repeat;
-    }
+  &__button-img {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(100% - 20px);
+    height: inherit;
+    border-radius: 20px;
+    transform: translateX(-50%);
   }
 
   &__photo {
     object-fit: cover;
     height: inherit;
     width: inherit;
-    border-radius: 10px;
+    border-radius: 20px;
 
     &--wrp {
       margin-bottom: 20px;
@@ -53,6 +63,42 @@
 
     &--small-height {
       height: 298px;
+    }
+  }
+
+  @media (max-width: 994px) {
+    &__controls {
+      margin-bottom: 62px;
+    }
+
+    &__group {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__photo {
+      &--wrp {
+        height: 127px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  @media (max-width: 680px) {
+    &__controls {
+      margin-bottom: 42px;
+    }
+
+    &__button {
+      font-size: 28px;
+
+      &--wrp {
+        height: 79px;
+      }
+    }
+
+    &__button-img {
+      height: 79px;
     }
   }
 }

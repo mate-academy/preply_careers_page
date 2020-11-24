@@ -4,22 +4,47 @@
 
   &__title {
     margin-bottom: 38px;
-    font-size: 52px;
-    color: $title-color-dark;
+    @include title($title-color-dark);
   }
 
   &__description {
     margin-bottom: 60px;
     font-size: 24px;
+    line-height: 36px;
     color: $text-color-dark;
   }
 
   &__hint {
     font-size: 24px;
+    line-height: 36px;
     color: $text-color-dark;
   }
 
   &__gallery {
     margin-bottom: 60px;
+  }
+
+  @media (max-width: 995px) {
+    padding: 24px;
+
+    &__title {
+      margin-bottom: 32px;
+      font-size: 38px;
+    }
+
+    &__description {
+      margin-bottom: 30px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__hint {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__gallery {
+      margin-bottom: 38px;
+    }
   }
 }

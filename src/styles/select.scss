@@ -1,0 +1,35 @@
+.select {
+  width: 448px;
+  height: 87px;
+  padding: 10px 35px 10px 39px;
+
+  background-color: $grey;
+  border-radius: 10px;
+  border: none;
+
+  font-weight: 700;
+  font-size: 28px;
+
+  color: #fff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(85, 109, 132, 0.7);
+  }
+
+  &:focus {
+    background-color: $grey;
+  }
+
+  &--dark {
+    background-color: $dark;
+
+    &:hover {
+      background-color: rgba(47, 61, 77, 0.7);
+    }
+
+    &:focus {
+      background-color: $dark;
+    }
+  }
+}

@@ -20,4 +20,4 @@ function changeGalleryPhotos({ target }) {
       photo.classList.add('gallery__photo--show');
     }
   });
-}
+};

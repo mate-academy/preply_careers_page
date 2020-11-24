@@ -15,3 +15,9 @@
   line-height: $_line-height;
   font-weight: 700;
 }
+
+@mixin title($_color) {
+  font-size: 52px;
+  line-height: 45px;
+  color: $_color;
+}

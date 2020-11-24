@@ -1,5 +1,4 @@
 .promo {
-  position: relative;
   min-height: 630px;
   background: linear-gradient(180deg, rgba(47, 61, 77, 0.6) 0%,
   rgba(47, 61, 77, 0.3) 97.92%),
@@ -8,6 +7,10 @@
   background-position: center;
 
   color: rgb(255, 255, 255);
+
+  &__container {
+    position: relative;
+  }
 
   &__top {
     align-items: center;
@@ -53,5 +56,30 @@
     line-height: 76px;
 
     margin-bottom: 60px;
+  }
+
+  &__glassdoor {
+    background-image: url("../images/promo/glassdoor-big.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    right: 0;
+    height: 160px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    div {
+      display: flex;
+      align-items: flex-start;
+    }
   }
 }

@@ -25,4 +25,41 @@
       color: #fff;
     }
   }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+  }
+
+  &__linkedin {
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/footer/linkedin.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__facebook {
+    width: 20px;
+    height: 40px;
+    background-image: url("../images/footer/facebook.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &__instagram {
+    width: 40px;
+    height: 40px;
+    background-image: url("../images/footer/linkedin.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__youtube {
+    width: 50px;
+    height: 35px;
+    background-image: url("../images/footer/youtube.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
 }

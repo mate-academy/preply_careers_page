@@ -1,5 +1,5 @@
 # Preply careers page
-- [DEMO LINK](https://<your_account>.github.io/<repo_name>/)
+- [DEMO LINK](https://mate-academy.github.io/preply_careers_page/)
 
 ## run project
 - npm install

@@ -17,10 +17,14 @@
   &__wrapper {
     display: grid;
     grid-template-columns: repeat(3, 421px);
+    justify-content: center;
     column-gap: 20px;
+    row-gap: 30px;
   }
 
-  @media (max-width: 960px) {
-    grid-template-rows: ;
+  @media (max-width: 1328px) {
+    &__wrapper {
+      grid-template-columns: 421px;
+    }
   }
 }

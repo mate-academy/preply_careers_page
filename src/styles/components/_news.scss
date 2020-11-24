@@ -17,11 +17,11 @@
   }
 
   &__wrapper {
-    padding: 77px 10px 50px 25px;
+    height: 100%;
 
+    padding: 77px 10px 50px 45px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     text-align: start;
   }
 
@@ -32,10 +32,25 @@
   }
 
   &__description {
-    margin-bottom: 65px;
+    margin-bottom: 40px;
 
     color: $text-color-dark;
     font-size: inherit;
     line-height: inherit;
+  }
+
+  &__bottom {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  &__image {
+    height: 65px;
+    object-fit: none;
+    object-position: 0;
   }
 }

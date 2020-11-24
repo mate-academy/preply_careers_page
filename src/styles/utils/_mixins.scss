@@ -4,3 +4,14 @@
     #{$_property}: $_toValue;
   }
 }
+
+@mixin news-card($_backgrount-color, $_color) {
+  background-color: $_backgrount-color;
+  color: $_color;
+}
+
+@mixin font-style-bold($_font-size, $_line-height) {
+  font-size: $_font-size;
+  line-height: $_line-height;
+  font-weight: 700;
+}

@@ -13,4 +13,14 @@
     font-size: 24px;
     color: $text-color-dark;
   }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 421px);
+    column-gap: 20px;
+  }
+
+  @media (max-width: 960px) {
+    grid-template-rows: ;
+  }
 }

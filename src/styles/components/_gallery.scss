@@ -28,6 +28,8 @@
       transition: width 0.3s;
     }
 
+    @extend %h2;
+
     &::before {
       content: "";
       position: absolute;

@@ -27,13 +27,26 @@
   }
 
   &__title {
-    font-size: 24px;
-    line-height: 26px;
+    margin-bottom: 10px;
+    @include font-style-bold(24px, 26px);
+
+    color: $title-color-dark;
   }
 
   &__description {
-    font-size: 16px;
-    line-height: 22px;
+    @include font-style-normal(16px, 22px);
+    color: $text-color-dark;
   }
 
+  @media (max-width: 640px) {
+    &__image {
+      height: 35px;
+      width: 35px;
+      margin: 10px;
+    }
+
+    &__title {
+      @include font-style-bold(20px, 22px);
+    }
+  }
 }

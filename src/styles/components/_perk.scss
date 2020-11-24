@@ -16,6 +16,14 @@
     margin-right: 18px;
 
     border-radius: 10px;
+
+    &--dark {
+      background-color: $red;
+    }
+
+    &--light {
+      background-color: $red-light;
+    }
   }
 
   &__title {

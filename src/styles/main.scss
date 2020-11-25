@@ -15,6 +15,7 @@ $grid-gutter-width: 20px;
 
 body {
   background: $c-gray;
+  box-sizing: border-box;
   @extend %p;
 }
 

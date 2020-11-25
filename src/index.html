@@ -155,53 +155,37 @@
         </div>
       </div>
     </section>
-    <section class="vacancies" id="vacancies">
+    <section class="vacancies">
       <div class="container">
         <div class="row">
-
           <div class="vacancies__wrapper col-10 offset-1">
-            <div class="select">
-              <select name="positions" class="select__item">
-                <option value="">Engineering (2)</option>
-                <option value="">Data (0)</option>
-                <option value="">Design (0)</option>
-                <option value="">Copy & Localisation (0)</option>
-                <option value="">Customer Support (0)</option>
-                <option value="">Product (0)</option>
-                <option value="">Marketing (0)</option>
-                <option value="">Tutor Operation (0)</option>
-                <option value="">Leadership (0)</option>
-                <option value="">Finance/Legal (0)</option>
-              </select>
+            <div class="js-team js-group select">
+              <div class="js-select select__basic-option" tabindex="0"></div>
+              <ul class="js-options select__options">
+                <li class="js-option select__option">Engineering</li>
+                <li class="js-option select__option">Data</li>
+                <li class="js-option select__option">Design</li>
+                <li class="js-option select__option">Copy & Localisation</li>
+                <li class="js-option select__option">Customer Support</li>
+                <li class="js-option select__option">Product</li>
+                <li class="js-option select__option">Marketing</li>
+                <li class="js-option select__option">Tutor Operation</li>
+                <li class="js-option select__option">Leadership</li>
+                <li class="js-option select__option">Finance/Legal</li>
+              </ul>
             </div>
 
-            <div class="select">
-              <select name="location" class="select__item select__item--dark">
-                <option value="">All locations</option>
-                <option value="">Kyiv</option>
-                <option value="">Barcelona</option>
-              </select>
+            <div class="js-location js-group select select--dark ">
+              <div class="js-select select__basic-option" tabindex="0"></div>
+              <ul class="js-options select__options">
+                <li class="js-option select__option">All locations</li>
+                <li class="js-option select__option">Kyiv</li>
+                <li class="js-option select__option">Barcelona</li>
+              </ul>
             </div>
-
           </div>
 
-          <table class="vacancies__list offset-1 col-10">
-            <tr class="vacancies__item">
-              <td class="vacancies__position">Full stack engineer</td>
-              <td class="vacancies__location">Kyiv</td>
-              <td class="vacancies__apply">
-                <button class="vacancies__btn">Apply</button>
-              </td>
-            </tr>
-
-            <tr class="vacancies__item">
-              <td class="vacancies__position">DevOps Manager</td>
-              <td class="vacancies__location">Barcelona</td>
-              <td class="vacancies__apply">
-                <button class="vacancies__btn">Apply</button>
-              </td>
-            </tr>
-          </table >
+          <table class="vacancies__list offset-1 col-10"></table >
         </div>
       </div>
     </section>

@@ -30,6 +30,8 @@
 
     @extend %h2;
 
+    @extend %h2;
+
     &::before {
       content: "";
       position: absolute;

@@ -37,7 +37,7 @@
   }
 
   @media (max-width: 1200px) {
-    padding: 0 37px;
+    padding: 0 20px;
     padding-top: 33px;
 
     &__title {
@@ -47,6 +47,26 @@
     &__text {
       margin-bottom: 20px;
       text-align: center;
+    }
+  }
+
+  @media (max-width: 500px) {
+    &__wrapper {
+      min-height: 375px;
+    }
+
+    &__title {
+      font-size: 38px;
+      line-height: 45px;
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__btn {
+      font-size: 20px;
     }
   }
 }

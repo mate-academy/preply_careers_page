@@ -3,6 +3,8 @@
   align-items: flex-start;
   text-align: left;
 
+  @include hover(transform, scale(1.1));
+
   &__image {
     display: block;
 

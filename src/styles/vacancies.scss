@@ -12,11 +12,18 @@
 
   &__item {
     border-bottom: 1px solid #cbd0d3;
+    height: 70px;
+    display: grid;
+    grid-template-columns: 50% 1fr 1fr;
+    align-items: center;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
   }
 
   &__position {
     font-weight: 700;
-    line-height: 70px;
     color: $text-color-dark;
   }
 
@@ -25,14 +32,19 @@
     color: #b4bbbe;
   }
 
-  &__btn {
+  &__apply {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__link {
     font-family: Roboto, serif;
     font-size: 24px;
     width: 100%;
     color: $green;
     font-weight: 700;
-    text-align: right;
     outline: none;
+    text-align: right;
 
     &:hover {
       color: $green-light;

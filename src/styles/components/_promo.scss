@@ -19,16 +19,17 @@
   }
 
   &__logo {
-    background-image: url("../images/logo.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
 
-    width: 200px;
-    height: 100px;
+    img {
+      width: 200px;
+      height: 100px;
+    }
   }
 
   &__privacy {
-    text-align: center;
+    text-align: right;
     font-size: 21px;
     line-height: 32px;
 
@@ -54,32 +55,85 @@
     font-family: "Roboto Condensed", sans-serif;
     font-size: 60px;
     line-height: 76px;
+    text-align: center;
 
     margin-bottom: 60px;
   }
 
   &__glassdoor {
-    background-image: url("../images/promo/glassdoor-big.svg");
     background-repeat: no-repeat;
     background-size: contain;
     position: absolute;
-    right: 0;
-    height: 160px;
-    width: 250px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    p {
-      font-weight: bold;
-      font-size: 14px;
+    &--big {
+      background-image: url("../images/promo/glassdoor-big.svg");
+      right: 0;
+      height: 160px;
+      width: 250px;
+
+      p {
+        font-weight: bold;
+        font-size: 14px;
+        color: #fff;
+      }
+
+      div {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      @media (max-width: 768px) {
+        display: none;
+      }
     }
 
-    div {
-      display: flex;
-      align-items: flex-start;
+    &--small {
+      display: none;
+      background-image: url("../images/promo/glassdoor-small.svg");
+      bottom: -170px;
+      left: calc(50% - 100px);
+      width: 200px;
+      height: 150px;
+
+      p {
+        font-size: 9px;
+        text-align: center;
+        color: #fff;
+      }
+
+      div {
+        margin-bottom: 30%;
+      }
+
+      @media (max-width: 768px) {
+        display: flex;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    min-height: 455px;
+
+    &__top {
+      margin-bottom: 20px;
+    }
+
+    &__privacy {
+      display: none;
+    }
+
+    &__subtitle {
+      font-size: 18px;
+    }
+
+    &__title {
+      font-size: 38px;
+      line-height: 45px;
     }
   }
 }

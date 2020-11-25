@@ -74,6 +74,12 @@ function renderVacancies(vacanciesToRender) {
   if (!vacanciesToShow) {
     vacanciesToShow = [];
 
+    const noVacancies = document.createElement('p');
+
+    noVacancies.textContent = 'No vacancies available here';
+
+    list.append(noVacancies);
+
     return;
   }
 
@@ -90,7 +96,7 @@ function renderVacancies(vacanciesToRender) {
 
     row.classList.add('vacancies__item');
 
-    row.innerHTML = `
+    row.insertAdjacentHTML('beforeend', `
       <td class="vacancies__info">
         <div class="vacancies__position">${vacancy.text}</div>
         <div class="vacancies__location">${vacancy.categories.location}</div>
@@ -99,10 +105,18 @@ function renderVacancies(vacanciesToRender) {
         <a href="${vacancy.applyUrl}" class="vacancies__link">Apply</a>
         <a href="${vacancy.applyUrl}" class="vacancies__arrow"></a>
       </td>
-    `;
+    `);
 
     list.append(row);
   });
+
+  if (vacanciesToShow.length === 0) {
+    const noVacancies = document.createElement('p');
+
+    noVacancies.textContent = 'No vacancies available here';
+
+    list.append(noVacancies);
+  }
 }
 
 function chooseLocation(text, select) {

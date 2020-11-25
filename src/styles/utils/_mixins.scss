@@ -16,6 +16,12 @@
   font-weight: 700;
 }
 
+@mixin font-style-normal($_font-size, $_line-height) {
+  font-size: $_font-size;
+  line-height: $_line-height;
+  font-weight: 400;
+}
+
 @mixin title($_color) {
   font-size: 52px;
   line-height: 45px;

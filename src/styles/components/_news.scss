@@ -2,17 +2,17 @@
   border-radius: 20px;
   @include hover(box-shadow, 10px 5px 5px black);
 
-  &--green {
+  &--crunch {
     @include news-card($card-color-crunch, $text-color-crunch);
     @include font-style-bold(42px, 55px);
   }
 
-  &--gray {
+  &--forbes {
     @include news-card($card-color-forbes, $text-color-forbes);
     @include font-style-bold(35px, 45px);
   }
 
-  &--blue {
+  &--edsurge {
     @include news-card($card-color-edsurge, $text-color-edsurge);
     @include font-style-bold(30px, 42px);
   }

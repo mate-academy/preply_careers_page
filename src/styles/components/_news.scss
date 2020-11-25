@@ -43,7 +43,6 @@
 
   &__bottom {
     display: flex;
-    height: 100%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
@@ -66,17 +65,17 @@
       line-height: 40px;
     }
 
-    &--green {
+    &--crunch {
       font-size: 28px;
       line-height: 37px;
     }
 
-    &--gray {
+    &--forbes {
       font-size: 26px;
       line-height: 34px;
     }
 
-    &--blue {
+    &--edsurge {
       font-size: 22px;
       line-height: 34px;
     }

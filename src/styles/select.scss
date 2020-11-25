@@ -1,19 +1,31 @@
 .select {
-  &__basic-option {
+  margin-bottom: 30px;
+
+  &__basic-option,
+  &__option {
+    padding: 25px 39px;
     width: 448px;
     height: 87px;
-    padding: 0 39px;
+    font-size: 28px;
+    background-color: $grey;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+
+    @media (max-width: 767px) {
+      width: 320px;
+      height: 50px;
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+
+  &__basic-option {
     position: relative;
 
-    background-color: $grey;
     border-radius: 10px;
     border: none;
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 87px;
-    color: #fff;
 
-    cursor: pointer;
     transition: background-color 0.2s;
 
     &::after {
@@ -27,6 +39,10 @@
       z-index: 3;
 
       pointer-events: none;
+
+      @media (max-width: 767px) {
+        top: 20px;
+      }
     }
 
     &--open {
@@ -52,7 +68,7 @@
     display: none;
 
     position: absolute;
-    z-index: 2;
+    z-index: 4;
   }
 
   &__basic-option--open ~ .select__options {
@@ -60,17 +76,6 @@
   }
 
   &__option {
-    padding: 0 39px;
-    background-color: $grey;
-    width: 448px;
-
-    font-weight: 700;
-    font-size: 28px;
-    line-height: 87px;
-    color: #fff;
-
-    cursor: pointer;
-
     &:last-of-type {
       border-radius: 0 0 10px 10px;
     }

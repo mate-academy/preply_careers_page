@@ -91,10 +91,13 @@ function renderVacancies(vacanciesToRender) {
     row.classList.add('vacancies__item');
 
     row.innerHTML = `
-      <td class="vacancies__position">${vacancy.text}</td>
-      <td class="vacancies__location">${vacancy.categories.location}</td>
+      <td class="vacancies__info">
+        <div class="vacancies__position">${vacancy.text}</div>
+        <div class="vacancies__location">${vacancy.categories.location}</div>
+      </td>
       <td class="vacancies__apply">
         <a href="${vacancy.applyUrl}" class="vacancies__link">Apply</a>
+        <a href="${vacancy.applyUrl}" class="vacancies__arrow"></a>
       </td>
     `;
 

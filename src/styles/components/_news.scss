@@ -1,29 +1,29 @@
 .news {
+  border-radius: 20px;
+  @include hover(box-shadow, 10px 5px 5px black);
+
+  &--green {
+    @include news-card(rgba(0, 152, 0, 0.19), #009800);
+    @include font-style-bold(42px, 55px);
+  }
+
+  &--gray {
+    @include news-card(rgba(60,59,59,0.19), #3C3B3B);
+    @include font-style-bold(35px, 45px);
+  }
+
+  &--blue {
+    @include news-card(rgba(0, 153, 138, 0.14) ,#00998A);
+    @include font-style-bold(30px, 42px);
+  }
+
   &__wrapper {
+    height: 100%;
+
+    padding: 77px 20px 50px 35px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     text-align: start;
-
-    padding: 77px 10px 50px 25px;
-
-    border-radius: 20px;
-
-    &--green {
-      @include news-card(rgba(0, 152, 0, 0.19), #009800);
-      @include font-style-bold(42px, 55px);
-    }
-
-    &--gray {
-      @include news-card(rgba(60,59,59,0.19), #3C3B3B);
-      @include font-style-bold(35px, 45px);
-    }
-
-    &--blue {
-      @include news-card(rgba(0, 153, 138, 0.14) ,#00998A);
-      @include font-style-bold(30px, 42px);
-    }
-
   }
 
   &__quotes {
@@ -33,8 +33,66 @@
   }
 
   &__description {
+    margin-bottom: 40px;
+
     color: $text-color-dark;
     font-size: inherit;
     line-height: inherit;
+    font-weight: inherit;
+  }
+
+  &__bottom {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+  }
+
+  &__image-wrapper {
+    height: 65px;
+    line-height: 65px;
+  }
+
+  &__image {
+    vertical-align: middle;
+    object-fit: contain;
+  }
+
+  @media (max-width: 640px) {
+    &__quotes {
+      font-size: 100px;
+      line-height: 40px;
+    }
+
+    &--green {
+      font-size: 28px;
+      line-height: 37px;
+    }
+
+    &--gray {
+      font-size: 26px;
+      line-height: 34px;
+    }
+
+    &--blue {
+      font-size: 22px;
+      line-height: 34px;
+    }
+
+    &__wrapper {
+      padding: 77px 20px 50px 35px;
+    }
+
+    &__image-wrapper {
+      height: 40px;
+      line-height: 40px;
+    }
+
+    &__image {
+      max-height: 40px;
+      max-width: 180px;
+    }
   }
 }

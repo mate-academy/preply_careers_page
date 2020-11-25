@@ -16,7 +16,7 @@
   </head>
   <body>
     <section class="promo">
-      <div class="container">
+      <div class="container promo__container">
         <div class="row promo__top">
           <div class="promo__logo col-2"></div>
           <div class="promo__privacy offset-8 col-2">
@@ -27,7 +27,14 @@
           <div class="promo__content col-12">
             <p class="promo__subtitle">preply careers</p>
             <h1 class="promo__title">Where your ideas create connections</h1>
-            <a href="#" class="btn">Browse open positions</a>
+            <a href="#vacancies" class="btn">Browse open positions</a>
+          </div>
+        </div>
+        <div class="promo__glassdoor">
+          <p>Read employees review on:</p>
+          <div>
+            <img src="./images/promo/glassdoor-logo.png" alt="">
+            <img src="./images/promo/glassdoor.png" alt="">
           </div>
         </div>
       </div>
@@ -124,7 +131,7 @@
         </div>
       </div>
     </section>
-    <section class="vacancies">
+    <section class="vacancies" id="vacancies">
       <div class="container">
         <div class="row">
 
@@ -177,42 +184,69 @@
     <section class="where-to-find">
       <div class="container">
         <div class="row justify-content-md-center">
-          <h2 class="where-to-find__title col-8">Where to find us</h2>
+          <h2 class="where-to-find__title col-12">Where to find us</h2>
 
-          <p class="where-to-find__description col-8">
+          <p class="where-to-find__description col-12 col-lg-8">
             Our main offices are located in two of the most vibrant and forward-thinking cities in Europe–Kyiv and Barcelona.*
           </p>
 
-          <div class="where-to-find__gallery gallery col-12">
-            <div class="gallery__controls">
-              <button
-                type="button"
-                class="gallery__button gallery__button--kyiv col-3"
-              >
-                Kyiv
-              </button>
-              <button
-                type="button"
-                class="gallery__button gallery__button--barcelona col-3"
-              >
-                Barcelona
-              </button>
+          <div class="where-to-find__gallery gallery">
+            <div class="gallery__controls row justify-content-md-center">
+              <div class="gallery__button--wrp col-6 col-lg-4 col-xl-3">
+                <img
+                  src="./images/whereToFind/kyiv/0.png"
+                  alt="Kyiv"
+                  class="gallery__button-img"
+                >
+                <button
+                  type="button"
+                  class="gallery__button gallery__button--active"
+                >
+                  Kyiv
+                </button>
+              </div>
+
+              <div class="gallery__button--wrp col-6 col-lg-4 col-xl-3">
+                <img
+                  src="./images/whereToFind/barcelona/0.png"
+                  alt="Barcelona"
+                  class="gallery__button-img"
+                >
+                <button
+                  type="button"
+                  class="gallery__button"
+                >
+                  Barcelona
+                </button>
+              </div>
             </div>
 
-            <div class="gallery__photos row">
-              <div class="gallery__photo--wrp gallery__photo--large-height col-6">
+            <div class="gallery__photos row justify-content-center">
+              <div class="gallery__photo--wrp gallery__photo--large-height col-12 col-lg-6">
                 <img
                   src="./images/whereToFind/kyiv/1.png"
                   alt="Kyiv"
+                  class="gallery__photo gallery__photo--show"
+                >
+
+                <img
+                  src="./images/whereToFind/barcelona/1.png"
+                  alt="Barcelona"
                   class="gallery__photo"
                 >
               </div>
 
-              <div class="col-6 row">
-                <div class="gallery__photo--wrp gallery__photo--small-height col-12">
+              <div class="gallery__group col-12 col-lg-6 row">
+                <div class="gallery__photo--wrp gallery__photo--small-height order-1 order-lg-0 col-12">
                   <img
                     src="./images/whereToFind/kyiv/2.png"
                     alt="Kyiv"
+                    class="gallery__photo gallery__photo--show"
+                  >
+
+                  <img
+                    src="./images/whereToFind/barcelona/2.png"
+                    alt="Barcelona"
                     class="gallery__photo"
                   >
                 </div>
@@ -221,6 +255,12 @@
                   <img
                     src="./images/whereToFind/kyiv/3.png"
                     alt="Kyiv"
+                    class="gallery__photo gallery__photo--show"
+                  >
+
+                  <img
+                    src="./images/whereToFind/barcelona/3.png"
+                    alt="Barcelona"
                     class="gallery__photo"
                   >
                 </div>
@@ -229,6 +269,12 @@
                   <img
                     src="./images/whereToFind/kyiv/4.png"
                     alt="Kyiv"
+                    class="gallery__photo gallery__photo--show"
+                  >
+
+                  <img
+                    src="./images/whereToFind/barcelona/4.png"
+                    alt="Barcelona"
                     class="gallery__photo"
                   >
                 </div>
@@ -252,7 +298,7 @@
             A few more reasons why you’ll love working with us.
           </p>
 
-          <div class="perks__perk perk col-6 col-lg-4">
+          <div class="perks__perk perk col-12 col-md-6 col-lg-4">
             <div class="perk__image-wrapper perk__image-wrapper--light">
               <img
                 alt="study"
@@ -273,7 +319,7 @@
             </div>
           </div>
 
-          <div class="perks__perk perk col-6 col-lg-4">
+          <div class="perks__perk perk col-12 col-md-6 col-lg-4">
             <div class="perk__image-wrapper perk__image-wrapper--dark">
               <img
                 alt="stock"
@@ -294,7 +340,7 @@
             </div>
           </div>
 
-          <div class="perks__perk perk col-6 col-lg-4">
+          <div class="perks__perk perk col-12 col-md-6 col-lg-4">
             <div class="perk__image-wrapper perk__image-wrapper--light">
               <img
                 alt="insurance"
@@ -315,7 +361,7 @@
             </div>
           </div>
 
-          <div class="perks__perk perk col-6 col-lg-4">
+          <div class="perks__perk perk col-12 col-md-6 col-lg-4">
             <div class="perk__image-wrapper perk__image-wrapper--dark">
               <img
                 alt="location"
@@ -336,7 +382,7 @@
             </div>
           </div>
 
-          <div class="perks__perk perk col-6 col-lg-4">
+          <div class="perks__perk perk col-12 col-md-6 col-lg-4">
             <div class="perk__image-wrapper perk__image-wrapper--light">
               <img
                 alt="equipment"
@@ -357,7 +403,7 @@
             </div>
           </div>
 
-          <div class="perks__perk perk col-6 col-lg-4">
+          <div class="perks__perk perk col-12 col-md-6 col-lg-4">
             <div class="perk__image-wrapper perk__image-wrapper--dark">
               <img
                 alt="holidays"
@@ -391,49 +437,69 @@
             Ok, now we're just showing off...
           </p>
 
-          <div class="in-news__news news col-12 col-lg-4">
-            <div class="news__wrapper news__wrapper--green">
-              <h4 class="news__quotes">“</h4>
-              <p class="news__description">
-                Online learning platforms such as Preply will continue to see growth...”
-              </p>
-              <img
-                alt="TechCrunch"
-                src="./images/news/TechCrunch.png">
-              </img>
+          <div class="in-news__wrapper col-12">
+            <div class="in-news__news news news--green">
+              <div class="news__wrapper">
+                <h4 class="news__quotes">“</h4>
+                <div class="news__bottom">
+                  <p class="news__description">
+                    Online learning platforms such as Preply will
+                    continue to see growth...”
+                  </p>
+                  <div class="news__image-wrapper">
+                    <img
+                      alt="TechCrunch"
+                      src="./images/news/TechCrunch.png"
+                      class="news__image"
+                    >
+                    </img>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="in-news__news news news--gray">
+              <div class="news__wrapper">
+                <h4 class="news__quotes">“</h4>
+                <div class="news__bottom">
+                  <p class="news__description">
+                    In the U.S. - its single largest market - it has seen the
+                    number of new customers double week over week.”
+                  </p>
+                  <div class="news__image-wrapper">
+                    <img
+                      alt="Forbes"
+                      src="./images/news/Forbes.png"
+                      class="news__image"
+                    >
+                    </img>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="in-news__news news news--blue">
+              <div class="news__wrapper">
+                <h4 class="news__quotes">“</h4>
+                <div class="news__bottom">
+                  <p class="news__description">
+                    Preply users have taken two million classes to date
+                    with 15K verified tutors of 160 nationalities teaching
+                    50 languages [and Preply states] revenue has grown
+                    tenfold over the last three years.”
+                  </p>
+                  <div class="news__image-wrapper">
+                    <img
+                      alt="EdSurge"
+                      src="./images/news/EdSurge.png"
+                      class="news__image"
+                    >
+                    </img>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div class="in-news__news news col-12 col-lg-4">
-            <div class="news__wrapper news__wrapper--gray">
-              <h4 class="news__quotes">“</h4>
-              <p class="news__description">
-                In the U.S. - its single largest market - it has seen the
-                number of new customers double week over week.”
-              </p>
-              <img
-                alt="Forbes"
-                src="./images/news/Forbes.png">
-              </img>
-            </div>
-          </div>
-
-          <div class="in-news__news news col-12 col-lg-4">
-            <div class="news__wrapper news__wrapper--blue">
-              <h4 class="news__quotes">“</h4>
-              <p class="news__description">
-                Preply users have taken two million classes to date
-                with 15K verified tutors of 160 nationalities teaching
-                50 languages [and Preply states] revenue has grown
-                tenfold over the last three years.”
-              </p>
-              <img
-                alt="EdSurge"
-                src="./images/news/EdSurge.png">
-              </img>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -459,15 +525,20 @@
     </section>
     <footer class="footer">
       <div class="container">
-        <div class="row justify-content-between">
-          <div class="footer__logo"></div>
-          <div class="footer__socials"></div>
+        <div class="row footer__top">
+          <div class="footer__logo col-2"></div>
+          <div class="footer__socials offset-7 col-3">
+            <a href="https://www.linkedin.com/company/preplycom/" class="footer__linkedin"></a>
+            <a href="https://www.facebook.com/preplycompany/" class="footer__facebook"></a>
+            <a href="https://www.instagram.com/preplycom" class="footer__instagram"></a>
+            <a href="https://www.youtube.com/channel/UCyDXMl-ru1F--NPCtO7aDig?feature=emb_ch_name_ex" class="footer__youtube"></a>
+          </div>
         </div>
-        <div class="row justify-content-between">
-          <p class="footer__copyright">
-            &#169;2012-2020 Preply Inc.
+        <div class="row">
+          <p class="footer__copyright col-3">
+            &#169; 2012-2020 Preply Inc.
           </p>
-          <div class="footer__privacy">
+          <div class="footer__privacy offset-7 col-2">
             <a href="#">Privacy Policy</a>
           </div>
         </div>

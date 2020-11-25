@@ -1,7 +1,7 @@
 {
   "name": "preply_careers_page",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "init": "mate-scripts init",
     "start": "mate-scripts start",
@@ -18,7 +18,7 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "@linthtml/linthtml": "^0.3.2",
-    "@mate-academy/eslint-config": "*",
+    "@mate-academy/eslint-config": "0.0.13",
     "@mate-academy/linthtml-config": "0.0.1",
     "@mate-academy/scripts": "^0.7.12",
     "@mate-academy/stylelint-config": "0.0.9",

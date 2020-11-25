@@ -43,7 +43,9 @@
     }
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 480px) {
+    padding: 10px;
+
     &__wrapper {
       grid-template-columns: 327px;
     }

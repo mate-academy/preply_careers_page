@@ -59,7 +59,7 @@
     object-fit: contain;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: 480px) {
     &__quotes {
       font-size: 100px;
       line-height: 40px;
@@ -92,6 +92,12 @@
     &__image {
       max-height: 40px;
       max-width: 180px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    &__wrapper {
+      padding: 50px 10px 40px 20px;
     }
   }
 }

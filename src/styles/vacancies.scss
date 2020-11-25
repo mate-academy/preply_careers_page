@@ -55,4 +55,8 @@
       outline: none;
     }
   }
+
+  @media (max-width: 500px) {
+    padding: 47px 20px;
+  }
 }

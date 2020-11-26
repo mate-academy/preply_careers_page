@@ -23,6 +23,7 @@ html {
   @extend %p;
 }
 
+@import "link";
 @import "btn";
 @import "./components/slogan";
 @import "./components/promo";

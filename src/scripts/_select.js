@@ -1,16 +1,16 @@
 import { getData } from '../api/api';
 
-const teamSelect = document.querySelector('.team');
-const basicTeamOption = teamSelect.querySelector('.select');
-const locationSelect = document.querySelector('.location');
-const basicLocationOption = locationSelect.querySelector('.select');
+const teamSelect = document.querySelector('.js-team');
+const basicTeamOption = teamSelect.querySelector('.js-select');
+const locationSelect = document.querySelector('.js-location');
+const basicLocationOption = locationSelect.querySelector('.js-select');
 let vacancies;
 let location;
 const list = document.querySelector('.vacancies__list');
 const groups = {};
 
 function countGroupedVacancies(select) {
-  const options = select.querySelectorAll('.option');
+  const options = select.querySelectorAll('.js-option');
 
   options.forEach((option) => {
     const text = option.textContent;
@@ -21,13 +21,13 @@ function countGroupedVacancies(select) {
 }
 
 function setBasicOption(select) {
-  const wrapper = select.closest('.group');
-  const option = wrapper.querySelectorAll('.option')[0];
+  const wrapper = select.closest('.js-group');
+  const option = wrapper.querySelectorAll('.js-option')[0];
   const text = option.textContent;
 
   select.textContent = text;
 
-  if (wrapper.classList.contains('team')) {
+  if (wrapper.classList.contains('js-team')) {
     chooseTeam(text, select);
   } else {
     chooseLocation(text, select);
@@ -38,11 +38,11 @@ function toggleTeamSelect() {
   teamSelect.addEventListener('click', (event) => {
     const { target } = event;
 
-    if (target.classList.contains('option')) {
+    if (target.classList.contains('js-option')) {
       chooseTeam(target.textContent, basicTeamOption);
     }
 
-    basicTeamOption.classList.toggle('select--open');
+    basicTeamOption.classList.toggle('select__basic-option--open');
   });
 }
 
@@ -50,11 +50,11 @@ function toggleLocationSelect() {
   locationSelect.addEventListener('click', (event) => {
     const { target } = event;
 
-    if (target.classList.contains('option')) {
+    if (target.classList.contains('js-option')) {
       chooseLocation(target.textContent, basicLocationOption);
     }
 
-    basicLocationOption.classList.toggle('select--open');
+    basicLocationOption.classList.toggle('select__basic-option--open');
   });
 }
 
@@ -74,6 +74,12 @@ function renderVacancies(vacanciesToRender) {
   if (!vacanciesToShow) {
     vacanciesToShow = [];
 
+    const noVacancies = document.createElement('p');
+
+    noVacancies.textContent = 'No vacancies available here';
+
+    list.append(noVacancies);
+
     return;
   }
 
@@ -90,16 +96,27 @@ function renderVacancies(vacanciesToRender) {
 
     row.classList.add('vacancies__item');
 
-    row.innerHTML = `
-      <td class="vacancies__position">${vacancy.text}</td>
-      <td class="vacancies__location">${vacancy.categories.location}</td>
+    row.insertAdjacentHTML('beforeend', `
+      <td class="vacancies__info">
+        <div class="vacancies__position">${vacancy.text}</div>
+        <div class="vacancies__location">${vacancy.categories.location}</div>
+      </td>
       <td class="vacancies__apply">
         <a href="${vacancy.applyUrl}" class="vacancies__link">Apply</a>
+        <a href="${vacancy.applyUrl}" class="vacancies__arrow"></a>
       </td>
-    `;
+    `);
 
     list.append(row);
   });
+
+  if (vacanciesToShow.length === 0) {
+    const noVacancies = document.createElement('p');
+
+    noVacancies.textContent = 'No vacancies available here';
+
+    list.append(noVacancies);
+  }
 }
 
 function chooseLocation(text, select) {

@@ -6,20 +6,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <title>Title</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
-      integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
-      crossorigin="anonymous"
-    >
     <link rel="stylesheet" href="./styles/main.scss">
   </head>
   <body>
     <section class="promo">
       <div class="container promo__container">
         <div class="row promo__top">
-          <div class="promo__logo col-2"></div>
-          <div class="promo__privacy offset-8 col-2">
+          <div class="promo__logo col-12 col-md-2">
+            <img src="./images/logo.png" alt="">
+          </div>
+          <div class="promo__privacy offset-md-7 col-md-3">
             <a href="#">Privacy Policy</a>
           </div>
         </div>
@@ -30,13 +26,28 @@
             <a href="#vacancies" class="btn">Browse open positions</a>
           </div>
         </div>
-        <div class="promo__glassdoor">
+        <a href="https://www.glassdoor.com/Reviews/Preply-Reviews-E1620838.htm" class="promo__glassdoor promo__glassdoor--big">
           <p>Read employees review on:</p>
           <div>
-            <img src="./images/promo/glassdoor-logo.png" alt="">
-            <img src="./images/promo/glassdoor.png" alt="">
+            <img
+              src="./images/promo/glassdoor-logo.png"
+              loading="lazy"
+              alt=""
+            >
+            <img
+              src="./images/promo/glassdoor.png"
+              loading="lazy"
+              alt=""
+            >
           </div>
-        </div>
+        </a>
+        <a href="https://www.glassdoor.com/Reviews/Preply-Reviews-E1620838.htm" class="promo__glassdoor promo__glassdoor--small">
+          <p>Read employees review on:</p>
+          <div>
+            <img src="./images/promo/glassdoor-logo-small.png" alt="">
+            <img src="./images/promo/glassdoor-name-small.png" alt="">
+          </div>
+        </a>
       </div>
     </section>
 
@@ -56,6 +67,7 @@
           <img
             src="./images/slogan/slogan_1.svg"
             alt="power"
+            loading="lazy"
             class="slogan__img col-xl-5 col-lg-12"
           >
         </div>
@@ -75,6 +87,7 @@
               <img
                 src="./images/peopleBehind/1.png"
                 alt="Proply logo"
+                loading="lazy"
                 class="people-behind__img"
               >
             </div>
@@ -82,6 +95,7 @@
               <img
                 src="./images/peopleBehind/2.png"
                 alt="Proply team"
+                loading="lazy"
                 class="people-behind__img"
               >
             </div>
@@ -89,6 +103,7 @@
               <img
                 src="./images/peopleBehind/3.png"
                 alt="Proply team"
+                loading="lazy"
                 class="people-behind__img"
               >
             </div>
@@ -96,6 +111,7 @@
               <img
                 src="./images/peopleBehind/4.png"
                 alt="Proply team"
+                loading="lazy"
                 class="people-behind__img"
               >
             </div>
@@ -103,6 +119,7 @@
               <img
                 src="./images/peopleBehind/5.png"
                 alt="Proply team"
+                loading="lazy"
                 class="people-behind__img"
               >
             </div>
@@ -126,6 +143,7 @@
           <img
             src="./images/slogan/slogan_2.svg"
             alt="partnership"
+            loading="lazy"
             class="slogan__img offset-xl-1 col-xl-5 col-lg-12"
           >
         </div>
@@ -134,33 +152,31 @@
     <section class="vacancies" id="vacancies">
       <div class="container">
         <div class="row">
-
           <div class="vacancies__wrapper col-10 offset-1">
-            <div class="team group">
-              <div class="select" tabindex="0"></div>
-              <ul class="options">
-                <li class="option">Engineering</li>
-                <li class="option">Data</li>
-                <li class="option">Design</li>
-                <li class="option">Copy & Localisation</li>
-                <li class="option">Customer Support</li>
-                <li class="option">Product</li>
-                <li class="option">Marketing</li>
-                <li class="option">Tutor Operation</li>
-                <li class="option">Leadership</li>
-                <li class="option">Finance/Legal</li>
+            <div class="js-team js-group select">
+              <div class="js-select select__basic-option" tabindex="0"></div>
+              <ul class="js-options select__options">
+                <li class="js-option select__option">Engineering</li>
+                <li class="js-option select__option">Data</li>
+                <li class="js-option select__option">Design</li>
+                <li class="js-option select__option">Copy & Localisation</li>
+                <li class="js-option select__option">Customer Support</li>
+                <li class="js-option select__option">Product</li>
+                <li class="js-option select__option">Marketing</li>
+                <li class="js-option select__option">Tutor Operation</li>
+                <li class="js-option select__option">Leadership</li>
+                <li class="js-option select__option">Finance/Legal</li>
               </ul>
             </div>
 
-            <div class="location group">
-              <div class="select select--dark" tabindex="0"></div>
-              <ul class="options">
-                <li class="option">All locations</li>
-                <li class="option">Kyiv</li>
-                <li class="option">Barcelona</li>
+            <div class="js-location js-group select select--dark ">
+              <div class="js-select select__basic-option" tabindex="0"></div>
+              <ul class="js-options select__options">
+                <li class="js-option select__option">All locations</li>
+                <li class="js-option select__option">Kyiv</li>
+                <li class="js-option select__option">Barcelona</li>
               </ul>
             </div>
-
           </div>
 
           <table class="vacancies__list offset-1 col-10"></table >
@@ -208,61 +224,77 @@
             </div>
 
             <div class="gallery__photos row justify-content-center">
-              <div class="gallery__photo--wrp gallery__photo--large-height col-12 col-lg-6">
-                <img
-                  src="./images/whereToFind/kyiv/1.png"
-                  alt="Kyiv"
-                  class="gallery__photo gallery__photo--show"
-                >
+              <div class="gallery__photo-item gallery__photo--large-height col-12 col-lg-6">
+                <div class="gallery__photo--wrp">
+                  <img
+                    src="./images/whereToFind/kyiv/1.png"
+                    alt="Kyiv"
+                    loading="lazy"
+                    class="gallery__photo gallery__photo--show"
+                  >
 
-                <img
-                  src="./images/whereToFind/barcelona/1.png"
-                  alt="Barcelona"
-                  class="gallery__photo"
-                >
+                  <img
+                    src="./images/whereToFind/barcelona/1.png"
+                    alt="Barcelona"
+                    loading="lazy"
+                    class="gallery__photo"
+                  >
+                </div>
               </div>
 
               <div class="gallery__group col-12 col-lg-6 row">
-                <div class="gallery__photo--wrp gallery__photo--small-height order-1 order-lg-0 col-12">
-                  <img
-                    src="./images/whereToFind/kyiv/2.png"
-                    alt="Kyiv"
-                    class="gallery__photo gallery__photo--show"
-                  >
+                <div class="gallery__photo-item gallery__photo--small-height order-1 order-lg-0 col-12">
+                  <div class="gallery__photo--wrp">
+                    <img
+                      src="./images/whereToFind/kyiv/2.png"
+                      alt="Kyiv"
+                      loading="lazy"
+                      class="gallery__photo gallery__photo--show"
+                    >
 
-                  <img
-                    src="./images/whereToFind/barcelona/2.png"
-                    alt="Barcelona"
-                    class="gallery__photo"
-                  >
+                    <img
+                      src="./images/whereToFind/barcelona/2.png"
+                      alt="Barcelona"
+                      loading="lazy"
+                      class="gallery__photo"
+                    >
+                  </div>
                 </div>
 
-                <div class="gallery__photo--wrp gallery__photo--small-height col-6">
-                  <img
-                    src="./images/whereToFind/kyiv/3.png"
-                    alt="Kyiv"
-                    class="gallery__photo gallery__photo--show"
-                  >
+                <div class="gallery__photo-item gallery__photo--small-height col-6">
+                  <div class="gallery__photo--wrp">
+                    <img
+                      src="./images/whereToFind/kyiv/3.png"
+                      alt="Kyiv"
+                      loading="lazy"
+                      class="gallery__photo gallery__photo--show"
+                    >
 
-                  <img
-                    src="./images/whereToFind/barcelona/3.png"
-                    alt="Barcelona"
-                    class="gallery__photo"
-                  >
+                    <img
+                      src="./images/whereToFind/barcelona/3.png"
+                      alt="Barcelona"
+                      loading="lazy"
+                      class="gallery__photo"
+                    >
+                  </div>
                 </div>
 
-                <div class="gallery__photo--wrp gallery__photo--small-height col-6">
-                  <img
-                    src="./images/whereToFind/kyiv/4.png"
-                    alt="Kyiv"
-                    class="gallery__photo gallery__photo--show"
-                  >
+                <div class="gallery__photo-item gallery__photo--small-height col-6">
+                  <div class="gallery__photo--wrp">
+                    <img
+                      src="./images/whereToFind/kyiv/4.png"
+                      alt="Kyiv"
+                      loading="lazy"
+                      class="gallery__photo gallery__photo--show"
+                    >
 
-                  <img
-                    src="./images/whereToFind/barcelona/4.png"
-                    alt="Barcelona"
-                    class="gallery__photo"
-                  >
+                    <img
+                      src="./images/whereToFind/barcelona/4.png"
+                      alt="Barcelona"
+                      loading="lazy"
+                      class="gallery__photo"
+                    >
+                  </div>
                 </div>
               </div>
             </div>
@@ -331,6 +363,7 @@
               <img
                 alt="insurance"
                 src="images/perks/Insurance.svg"
+                loading="lazy"
                 class="perk__image"
               >
               </img>
@@ -352,6 +385,7 @@
               <img
                 alt="location"
                 src="images/perks/Location.svg"
+                loading="lazy"
                 class="perk__image"
               >
               </img>
@@ -373,6 +407,7 @@
               <img
                 alt="equipment"
                 src="images/perks/Equipment.svg"
+                loading="lazy"
                 class="perk__image"
               >
               </img>
@@ -394,6 +429,7 @@
               <img
                 alt="holidays"
                 src="images/perks/Holidays.svg"
+                loading="lazy"
                 class="perk__image"
               >
               </img>
@@ -424,7 +460,7 @@
           </p>
 
           <div class="in-news__wrapper col-12">
-            <div class="in-news__news news news--green">
+            <div class="in-news__news news news--crunch">
               <div class="news__wrapper">
                 <h4 class="news__quotes">“</h4>
                 <div class="news__bottom">
@@ -436,6 +472,7 @@
                     <img
                       alt="TechCrunch"
                       src="./images/news/TechCrunch.png"
+                      loading="lazy"
                       class="news__image"
                     >
                     </img>
@@ -444,7 +481,7 @@
               </div>
             </div>
 
-            <div class="in-news__news news news--gray">
+            <div class="in-news__news news news--forbes">
               <div class="news__wrapper">
                 <h4 class="news__quotes">“</h4>
                 <div class="news__bottom">
@@ -456,6 +493,7 @@
                     <img
                       alt="Forbes"
                       src="./images/news/Forbes.png"
+                      loading="lazy"
                       class="news__image"
                     >
                     </img>
@@ -464,7 +502,7 @@
               </div>
             </div>
 
-            <div class="in-news__news news news--blue">
+            <div class="in-news__news news news--edsurge">
               <div class="news__wrapper">
                 <h4 class="news__quotes">“</h4>
                 <div class="news__bottom">
@@ -478,6 +516,7 @@
                     <img
                       alt="EdSurge"
                       src="./images/news/EdSurge.png"
+                      loading="lazy"
                       class="news__image"
                     >
                     </img>
@@ -498,12 +537,13 @@
               Shape the future <br> of effective learning
             </h2>
 
-            <button class="btn btn--light slogan__btn">Browse open positions</button>
+            <a href="#vacancies" class="btn btn--light slogan__btn">Browse open positions</a>
           </div>
 
           <img
             src="./images/slogan/slogan_3.svg"
             alt="learning"
+            loading="lazy"
             class="slogan__img slogan__img--center offset-xl-1 col-xl-5 col-lg-12"
           >
         </div>
@@ -512,8 +552,10 @@
     <footer class="footer">
       <div class="container">
         <div class="row footer__top">
-          <div class="footer__logo col-2"></div>
-          <div class="footer__socials offset-7 col-3">
+          <div class="footer__logo col-4 col-lg-2">
+            <img src="./images/logo.png" alt="">
+          </div>
+          <div class="footer__socials offset-1 offset-sm-2 col-6 offset-lg-7 col-lg-3">
             <a href="https://www.linkedin.com/company/preplycom/" class="footer__linkedin"></a>
             <a href="https://www.facebook.com/preplycompany/" class="footer__facebook"></a>
             <a href="https://www.instagram.com/preplycom" class="footer__instagram"></a>
@@ -521,10 +563,10 @@
           </div>
         </div>
         <div class="row">
-          <p class="footer__copyright col-3">
+          <p class="footer__copyright col-12 col-lg-4">
             &#169; 2012-2020 Preply Inc.
           </p>
-          <div class="footer__privacy offset-7 col-2">
+          <div class="footer__privacy col-12 offset-lg-6 col-lg-2">
             <a href="#">Privacy Policy</a>
           </div>
         </div>

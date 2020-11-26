@@ -8,25 +8,35 @@
   }
 
   &__logo {
-    background-image: url("../images/logo.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
+    img {
+      width: 200px;
+      height: 100px;
 
-    width: 200px;
-    height: 100px;
+      @media (max-width: 767px) {
+        width: 110px;
+        height: 60px;
+      }
+    }
   }
 
   &__copyright {
     color: #fff;
+
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
   }
 
   &__privacy {
-    text-align: right;
     font-size: 21px;
     line-height: 32px;
 
     a {
       color: #fff;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 16px;
     }
   }
 
@@ -42,14 +52,24 @@
     background-image: url("../images/footer/linkedin.svg");
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+
+    @media (max-width: 767px) {
+      height: 25px;
+    }
   }
 
   &__facebook {
-    width: 20px;
+    width: 40px;
     height: 40px;
     background-image: url("../images/footer/facebook.svg");
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+
+    @media (max-width: 767px) {
+      height: 25px;
+    }
   }
 
   &__instagram {
@@ -58,6 +78,11 @@
     background-image: url("../images/footer/instagram.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
+
+    @media (max-width: 767px) {
+      height: 25px;
+    }
   }
 
   &__youtube {
@@ -66,5 +91,10 @@
     background-image: url("../images/footer/youtube.svg");
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
+
+    @media (max-width: 767px) {
+      height: 25px;
+    }
   }
 }

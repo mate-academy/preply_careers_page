@@ -12,17 +12,17 @@
     @include description($text-color-dark);
   }
 
+  &__img-wrp {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
   &__img {
     object-fit: cover;
     height: inherit;
     width: inherit;
     border-radius: $image-border-radius;
     @include hover(transform, scale(1.1));
-
-    &--wrp {
-      height: 300px;
-      margin-bottom: 20px;
-    }
   }
 
   @media (max-width: 995px) {
@@ -38,7 +38,7 @@
       font-size: 16px;
     }
 
-    &__img--wrp {
+    &__img-wrp {
       height: 180px;
 
       &:first-child {
@@ -52,7 +52,7 @@
   }
 
   @media (max-width: 495px) {
-    &__img--wrp {
+    &__img-wrp {
       height: 80px;
     }
   }

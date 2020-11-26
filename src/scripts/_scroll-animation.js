@@ -1,8 +1,12 @@
+window.scrollTo(window.pageYOffset, 0);
+
 const animItems = document.querySelectorAll('.scroll-section');
 
 if (animItems.length) {
-  window.addEventListener('scroll', animOnScroll);
-  animOnScroll();
+  setTimeout(() => {
+    window.addEventListener('scroll', animOnScroll);
+    animOnScroll();
+  }, 1000);
 }
 
 function animOnScroll() {

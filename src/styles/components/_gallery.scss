@@ -3,6 +3,11 @@
     margin-bottom: 90px;
   }
 
+  &__button-wrp {
+    position: relative;
+    height: 160px;
+  }
+
   &__button {
     position: absolute;
     top: 0;
@@ -58,11 +63,6 @@
         width: calc(100% - 20px);
       }
     }
-
-    &--wrp {
-      position: relative;
-      height: 160px;
-    }
   }
 
   &__button-img {
@@ -77,6 +77,13 @@
 
   &__photo-item {
     margin-bottom: 20px;
+  }
+
+  &__photo-wrp {
+    position: relative;
+    width: inherit;
+    height: inherit;
+    overflow: hidden;
   }
 
   &__photo {
@@ -94,13 +101,6 @@
       transform: translateY(0);
     }
 
-    &--wrp {
-      position: relative;
-      width: inherit;
-      height: inherit;
-      overflow: hidden;
-    }
-
     &--large-height {
       height: 621px;
     }
@@ -115,16 +115,16 @@
       margin-bottom: 62px;
     }
 
+    &__button-wrp {
+      height: 100px;
+    }
+
     &__button {
       font-size: 35px;
 
       &::after {
         bottom: -15px;
         height: 5px;
-      }
-
-      &--wrp {
-        height: 100px;
       }
     }
 
@@ -144,16 +144,12 @@
       margin-bottom: 42px;
     }
 
-    &__button {
-      font-size: 28px;
-
-      &--wrp {
-        height: 79px;
-      }
+    &__button-wrp {
+      height: 70px;
     }
 
-    &__button-img {
-      height: 79px;
+    &__button {
+      font-size: 28px;
     }
 
     &__photo-item {

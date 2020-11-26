@@ -1,6 +1,32 @@
 .news {
+  position: relative;
+  overflow: hidden;
+
   border-radius: 20px;
   @include hover(box-shadow, 10px 5px 5px black);
+
+  &::before {
+    pointer-events: none;
+    position: absolute;
+    top: var(--top);
+    left: var(--left);
+    width: var(--width);
+    height: var(--height);
+    content: "";
+
+    background-color: rebeccapurple;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s, transform 0.3s;
+    border-radius: 50%;
+    transform: scale(0);
+  }
+
+  &:hover::before {
+
+    transform: scale(2);
+    opacity: 0.2;
+  }
 
   &--crunch {
     @include news-card($card-color-crunch, $text-color-crunch);

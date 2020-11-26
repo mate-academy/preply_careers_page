@@ -28,7 +28,7 @@
   color: $_color;
 }
 
-@mixin  description($_color) {
+@mixin description($_color) {
   font-size: 24px;
   line-height: 36px;
   color: $_color;

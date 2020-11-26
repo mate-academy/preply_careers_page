@@ -25,15 +25,15 @@ html {
 }
 
 @import "btn";
-@import "slogan";
+@import "./components/slogan";
 @import "./components/promo";
 @import "./components/people-behind";
 @import "./components/perks";
 @import "./components/perk";
 @import "./components/where-to-find";
 @import "./components/gallery";
-@import "vacancies";
-@import "select";
+@import "./components/vacancies";
+@import "./components/select";
 @import "./components/in-news";
 @import "./components/news";
 @import "./components/footer";

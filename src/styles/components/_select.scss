@@ -1,31 +1,19 @@
 .select {
-  margin-bottom: 30px;
-
-  &__basic-option,
-  &__option {
-    padding: 25px 39px;
+  &__basic-option {
     width: 448px;
     height: 87px;
-    font-size: 28px;
-    background-color: $grey;
-    font-weight: 700;
-    color: #fff;
-    cursor: pointer;
-
-    @media (max-width: 767px) {
-      width: 320px;
-      height: 50px;
-      font-size: 16px;
-      padding: 10px 20px;
-    }
-  }
-
-  &__basic-option {
+    padding: 0 39px;
     position: relative;
 
+    background-color: $grey;
     border-radius: 10px;
     border: none;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 87px;
+    color: #fff;
 
+    cursor: pointer;
     transition: background-color 0.2s;
 
     &::after {
@@ -36,13 +24,9 @@
       position: absolute;
       top: 30px;
       right: 32px;
-      z-index: 3;
+      z-index: 1;
 
       pointer-events: none;
-
-      @media (max-width: 767px) {
-        top: 20px;
-      }
     }
 
     &--open {
@@ -55,7 +39,7 @@
     }
 
     &:hover {
-      background-color: rgba(47, 61, 77, 0.7);
+      background-color: rgba(85, 109, 132, 0.7);
     }
 
     &:focus {
@@ -65,23 +49,52 @@
   }
 
   &__options {
-    display: none;
-
     position: absolute;
-    z-index: 4;
+    z-index: 2;
+
+    visibility: hidden;
+    transition: opacity 0.3s;
+    opacity: 0;
   }
 
   &__basic-option--open ~ .select__options {
-    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 
   &__option {
+    padding: 0 39px;
+    background-color: $grey;
+    width: 448px;
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 87px;
+    color: #fff;
+
+    cursor: pointer;
+
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateY(-100%);
+    opacity: 0;
+
     &:last-of-type {
       border-radius: 0 0 10px 10px;
     }
 
     &:hover {
       color: $green;
+    }
+  }
+
+  &__basic-option--open ~ .select__options .select__option {
+    transform: none;
+    opacity: 1;
+
+    @for $i from 1 to 10 {
+      &:nth-child(#{$i + 1}) {
+        transition-delay: #{0.05 * $i}s;
+      }
     }
   }
 
@@ -95,6 +108,10 @@
     &:focus {
       background-color: $dark;
     }
+  }
+
+  &--dark .select__options {
+    z-index: 1;
   }
 
   &--dark .select__option {

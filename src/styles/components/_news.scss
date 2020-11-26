@@ -14,7 +14,6 @@
     height: var(--height);
     content: "";
 
-    background-color: rebeccapurple;
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s, transform 0.3s;
@@ -31,16 +30,28 @@
   &--crunch {
     @include news-card($card-color-crunch, $text-color-crunch);
     @include font-style-bold(42px, 55px);
+
+    &::before {
+      background-color: $text-color-crunch;
+    }
   }
 
   &--forbes {
     @include news-card($card-color-forbes, $text-color-forbes);
     @include font-style-bold(35px, 45px);
+
+    &::before {
+      background-color: $text-color-forbes;
+    }
   }
 
   &--edsurge {
     @include news-card($card-color-edsurge, $text-color-edsurge);
     @include font-style-bold(30px, 42px);
+
+    &::before {
+      background-color: $text-color-edsurge;
+    }
   }
 
   &__wrapper {

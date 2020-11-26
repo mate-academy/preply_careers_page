@@ -23,6 +23,7 @@ html {
   @extend %p;
 }
 
+@import "link";
 @import "btn";
 @import "./components/slogan";
 @import "./components/promo";
@@ -36,3 +37,4 @@ html {
 @import "./components/in-news";
 @import "./components/news";
 @import "./components/footer";
+@import "./components/scroll-section";

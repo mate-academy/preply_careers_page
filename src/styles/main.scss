@@ -24,6 +24,7 @@ html {
   @extend %p;
 }
 
+@import "link";
 @import "btn";
 @import "slogan";
 @import "./components/promo";

@@ -8,10 +8,12 @@
   }
 
   &__list {
+    text-align: center;
     margin-top: 63px;
   }
 
   &__item {
+    min-height: 70px;
     padding-bottom: 15px;
     margin-bottom: 15px;
     border-bottom: 1px solid #cbd0d3;
@@ -28,6 +30,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: left;
 
     @media (max-width: 767px) {
       flex-direction: column;
@@ -38,14 +41,21 @@
   }
 
   &__position {
+    max-width: 65%;
     font-weight: 700;
     color: $text-color-dark;
   }
 
   &__location {
-    text-align: right;
+    width: 20%;
+    text-align: left;
     font-weight: 700;
+    line-height: 25px;
     color: #b4bbbe;
+
+    @media (max-width: 767px) {
+      width: 100%;
+    }
   }
 
   &__apply {

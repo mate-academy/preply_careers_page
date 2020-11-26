@@ -64,7 +64,7 @@
   }
 
   &__quotes {
-    font-weight: 700;
+    @extend %h2;
     font-size: 144px;
     line-height: 60px;
   }

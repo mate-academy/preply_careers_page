@@ -9,9 +9,7 @@
 
   &__description {
     margin-bottom: 45px;
-    font-size: 24px;
-    line-height: 36px;
-    color: $text-color-dark;
+    @include description($text-color-dark);
   }
 
   &__img-wrp {
@@ -23,7 +21,7 @@
     object-fit: cover;
     height: inherit;
     width: inherit;
-    border-radius: 10px;
+    border-radius: $image-border-radius;
   }
 
   @media (max-width: 995px) {

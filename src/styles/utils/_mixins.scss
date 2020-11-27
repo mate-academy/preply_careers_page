@@ -5,6 +5,13 @@
   }
 }
 
+@mixin hover-duration($_property, $_toValue, $_duration) {
+  transition: #{$_property} #{$_duration};
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
 @mixin news-card($_backgrount-color, $_color) {
   background-color: $_backgrount-color;
   color: $_color;

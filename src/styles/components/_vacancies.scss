@@ -1,5 +1,7 @@
 .vacancies {
   padding: 93px 47px 60px;
+  position: relative;
+  z-index: 1;
 
   &__wrapper {
     display: flex;

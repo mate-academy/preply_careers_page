@@ -5,6 +5,7 @@
 
   &__basic-option,
   &__option {
+    position: relative;
     padding: 28px 39px;
     background-color: $grey;
     width: 448px;
@@ -25,8 +26,6 @@
   }
 
   &__basic-option {
-    position: relative;
-
     border-radius: 10px;
     border: none;
 

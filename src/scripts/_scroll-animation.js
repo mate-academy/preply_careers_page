@@ -1,5 +1,3 @@
-// window.scrollTo(window.pageYOffset, 0);
-
 window.onload = () => {
   const animItems = document.querySelectorAll('.js-scroll');
 
@@ -15,6 +13,7 @@ function createObserver(target) {
     threshold: 0.2,
   };
 
+  // eslint-disable-next-line no-undef
   const intObserver = new IntersectionObserver(callback, options);
 
   function callback(entries, observer) {

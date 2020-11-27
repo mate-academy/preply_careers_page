@@ -1,11 +1,33 @@
 .slogan {
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
-  background-color: $green;
+  background-color: transparent;
   padding: 0 47px;
 
-  &--red {
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0;
+    transform: translateY(20%);
+    transition: $scroll-transform-transition, $scroll-opacity-transition;
+  }
+
+  &--active::after {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &--green::after {
+    background-color: $green;
+  }
+
+  &--red::after {
     background-color: $red-light;
   }
 

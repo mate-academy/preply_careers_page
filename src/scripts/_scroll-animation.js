@@ -1,37 +1,49 @@
-window.scrollTo(window.pageYOffset, 0);
+// window.scrollTo(window.pageYOffset, 0);
 
-const animItems = document.querySelectorAll('.scroll-section');
+window.onload = () => {
+  const animItems = document.querySelectorAll('.js-scroll');
 
-if (animItems.length) {
-  setTimeout(() => {
-    window.addEventListener('scroll', animOnScroll);
-    animOnScroll();
-  }, 1000);
-}
+  animItems.forEach(animItem => {
+    createObserver(animItem);
+  });
+};
 
-function animOnScroll() {
-  for (let index = 0; index < animItems.length; index++) {
-    const animItem = animItems[index];
-    const animItemHeight = animItem.offsetHeight;
-    const animItemOffset = offsetTop(animItem);
-    const animStartNum = 5;
+function createObserver(target) {
+  const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.2,
+  };
 
-    const animStart = animItemHeight > window.innerHeight
-      ? window.innerHeight / animStartNum
-      : animItemHeight / animStartNum;
+  const intObserver = new IntersectionObserver(callback, options);
 
-    const animItemPoint = window.innerHeight + animItemHeight - animStart;
+  function callback(entries, observer) {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        return;
+      }
 
-    if ((window.pageYOffset > animItemOffset - animItemPoint)
-      && (window.pageYOffset < animItemOffset + animItemHeight)) {
-      animItem.classList.add('scroll-section--active');
-    }
+      const elements = entry.target.querySelectorAll('.js-scroll__element');
+      let delayValue = 0;
+
+      entry
+        .target
+        .style
+        .setProperty('--slogan-after-transform', 'translateY(0)');
+
+      entry
+        .target
+        .style
+        .setProperty('--slogan-after-opacity', '1');
+
+      elements.forEach(element => {
+        element.style['transition-delay'] = `${delayValue += 0.3}s`;
+        element.classList.add('scroll--active');
+      });
+
+      observer.unobserve(entry.target);
+    });
   }
-}
 
-function offsetTop(el) {
-  const rect = el.getBoundingClientRect();
-  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  return rect.top + scrollTop;
+  intObserver.observe(target);
 }

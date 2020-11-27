@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-const BASE_URL = 'https://api.lever.co/v0/postings/preplys?mode=json';
+const BASE_URL = 'https://api.lever.co/v0/postings/preply?mode=json';
 
 export async function getData(groups) {
   try {

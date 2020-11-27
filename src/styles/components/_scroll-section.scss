@@ -3,6 +3,14 @@
   transform: translateY(100%);
   transition: transform 0.8s ease-out, opacity 1s ease-out;
 
+  &--small-delay {
+    transition-delay: 0.5s;
+  }
+
+  &--long-delay {
+    transition-delay: 1s;
+  }
+
   &--active {
     opacity: 1;
     transform: translateY(0);

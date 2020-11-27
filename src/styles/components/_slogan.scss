@@ -1,7 +1,4 @@
 .slogan {
-  --slogan-after-opacity: 0;
-  --slogan-after-transform: translateY(20%);
-
   position: relative;
   display: flex;
   align-items: center;
@@ -16,9 +13,14 @@
     width: 100%;
     height: 100%;
     z-index: -1;
-    opacity: var(--slogan-after-opacity);
-    transform: var(--slogan-after-transform);
+    opacity: 0;
+    transform: translateY(20%);
     transition: $scroll-transform-transition, $scroll-opacity-transition;
+  }
+
+  &--active::after {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   &--green::after {

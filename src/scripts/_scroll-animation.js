@@ -23,18 +23,12 @@ function createObserver(target) {
         return;
       }
 
+      if (entry.target.classList.contains('slogan')) {
+        entry.target.classList.add('slogan--active');
+      }
+
       const elements = entry.target.querySelectorAll('.js-scroll__element');
       let delayValue = 0;
-
-      entry
-        .target
-        .style
-        .setProperty('--slogan-after-transform', 'translateY(0)');
-
-      entry
-        .target
-        .style
-        .setProperty('--slogan-after-opacity', '1');
 
       elements.forEach(element => {
         element.style['transition-delay'] = `${delayValue += 0.3}s`;

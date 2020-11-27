@@ -1,5 +1,7 @@
 .vacancies {
   padding: 93px 47px 60px;
+  position: relative;
+  z-index: 1;
 
   &__wrapper {
     display: flex;
@@ -106,4 +108,8 @@
   @media (max-width: 500px) {
     padding: 47px 20px;
   }
+}
+
+.error {
+  text-align: center;
 }

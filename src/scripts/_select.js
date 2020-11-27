@@ -125,14 +125,28 @@ function chooseLocation(text, select) {
   renderVacancies(vacancies);
 }
 
-async function startApplication() {
-  await getData(groups);
+function renderError() {
+  const vacanciesSection = document.querySelector('.vacancies');
 
-  countGroupedVacancies(teamSelect);
-  setBasicOption(basicTeamOption);
-  setBasicOption(basicLocationOption);
-  toggleLocationSelect();
-  toggleTeamSelect();
+  vacanciesSection.innerHTML = `
+    <div>
+      <p class="error">Can't load the vacancies. Try to reload the page</p>
+    </div>
+  `;
+}
+
+async function startApplication() {
+  try {
+    await getData(groups);
+
+    countGroupedVacancies(teamSelect);
+    setBasicOption(basicTeamOption);
+    setBasicOption(basicLocationOption);
+    toggleLocationSelect();
+    toggleTeamSelect();
+  } catch (error) {
+    renderError();
+  }
 }
 
 startApplication();

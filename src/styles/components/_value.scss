@@ -1,0 +1,31 @@
+.value {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-content: stretch;
+  background-color: black;
+  border-radius: 20px;
+
+  &__title {
+    position: relative;
+  }
+
+  &__text {
+    position: absolute;
+    display: block;
+    left: 0;
+    bottom: 0;
+
+    color: white;
+    font-size: 32px;
+
+    transform: rotate(-90deg);
+  }
+
+  &__image {
+    display: block;
+    margin: 35px 10px 0;
+    height: 265px;
+    width: 325px;
+  }
+}

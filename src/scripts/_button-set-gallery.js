@@ -1,10 +1,12 @@
-const gallery = document.querySelector('.gallery');
-const buttons = gallery.querySelectorAll('.gallery__button');
-const photos = gallery.querySelectorAll('.gallery__photo');
+const gallery = document.querySelector('.js-gallery');
+const buttons = gallery.querySelectorAll('.js-gallery-button');
+const photos = gallery.querySelectorAll('.js-gallery-photo');
 
-[...buttons].forEach(button => {
-  button.addEventListener('click', changeGalleryPhotos);
-});
+export function addListenerForGalleryButtons() {
+  [...buttons].forEach(button => {
+    button.addEventListener('click', changeGalleryPhotos);
+  });
+};
 
 function changeGalleryPhotos({ target }) {
   [...buttons].forEach(button => {

@@ -1,12 +1,15 @@
 .promo {
   min-height: 630px;
-  background: linear-gradient(180deg, rgba(47, 61, 77, 0.6) 0%,
-  rgba(47, 61, 77, 0.3) 97.92%),
+  background: linear-gradient(
+    180deg,
+    rgba(47, 61, 77, 0.6) 0%,
+    rgba(47, 61, 77, 0.3) 97.92%
+  ),
     url("../images/promo/bg-promo.jpg");
   background-size: cover;
   background-position: center;
 
-  color: rgb(255, 255, 255);
+  color: $text-color-light;
 
   &__container {
     position: relative;
@@ -35,7 +38,7 @@
     line-height: 32px;
 
     a {
-      color: #fff;
+      color: $text-color-light;
     }
   }
 
@@ -85,7 +88,7 @@
       p {
         font-weight: bold;
         font-size: 14px;
-        color: #fff;
+        color: $text-color-light;
       }
 
       div {
@@ -109,7 +112,7 @@
       p {
         font-size: 9px;
         text-align: center;
-        color: #fff;
+        color: $text-color-light;
       }
 
       div {

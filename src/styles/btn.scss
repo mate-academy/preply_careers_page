@@ -1,31 +1,28 @@
 .btn {
-  width: 360px;
-  height: 67px;
+  padding: 14px 55px;
   border-radius: 10px;
   background-color: $green;
 
-  color: #fff;
+  color: $text-color-light;
   font-weight: 500;
-  font-size: 24px;
-  line-height: 48px;
 
   &:hover {
     background-color: $green-light;
-    color: #fff;
+    color: $text-color-light;
   }
 
   &:focus {
-    background-color: #fff;
+    background-color: $text-color-light;
     color: $green;
   }
 
   &--light {
-    background-color: #fff;
-    color: #3e929b;
+    background-color: $text-color-light;
+    color: $btn-light-text;
 
     &:focus {
       background-color: $dark;
-      color: #fff;
+      color: $text-color-light;
     }
   }
 

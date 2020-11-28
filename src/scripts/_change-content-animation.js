@@ -4,7 +4,7 @@ cards.forEach(card => {
   const additional = card.querySelector('.value__additional');
   const main = card.querySelector('.value__main');
 
-  card.addEventListener('mouseenter', (event) => {
+  card.addEventListener('mouseenter', () => {
     additional.classList.add('value__additional--active');
     main.classList.remove('value__main--active');
   });

@@ -44,7 +44,7 @@ function setBasicOption(select, options) {
   if (wrapper.classList.contains('js-team')) {
     chooseTeam(text, select);
   } else {
-    chooseLocation(text, select);
+    chooseLocation(option, select);
   }
 }
 
@@ -77,7 +77,7 @@ function toggleLocationSelect() {
     const { target } = event;
 
     if (target.classList.contains('js-option')) {
-      chooseLocation(target.textContent, basicLocationOption);
+      chooseLocation(target, basicLocationOption);
     }
 
     basicLocationOption.classList.toggle('select__basic-option--open');
@@ -157,9 +157,11 @@ function renderVacancies(vacanciesToRender) {
   }
 }
 
-function chooseLocation(text, select) {
+function chooseLocation(target, select) {
+  const text = target.textContent;
+
   if (location) {
-    if (text !== 'All locations') {
+    if (target.id !== 'all') {
       for (const key in groups) {
         filteredGroups[key] = [...groups[key]].filter((vacancy) => {
           return vacancy.categories.location.includes(text);
@@ -168,7 +170,6 @@ function chooseLocation(text, select) {
     } else {
       filteredGroups = { ...groups };
     }
-
     countGroupedVacancies(teamSelect, filteredGroups);
   }
 

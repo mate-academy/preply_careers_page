@@ -44,6 +44,18 @@ function toggleTeamSelect() {
 
     basicTeamOption.classList.toggle('select__basic-option--open');
   });
+
+  document.addEventListener('click', (event) => {
+    const { target } = event;
+
+    if (!basicTeamOption.classList.contains('select__basic-option--open')) {
+      return;
+    }
+
+    if (!target.closest('.js-team')) {
+      basicTeamOption.classList.remove('select__basic-option--open');
+    }
+  });
 }
 
 function toggleLocationSelect() {
@@ -55,6 +67,18 @@ function toggleLocationSelect() {
     }
 
     basicLocationOption.classList.toggle('select__basic-option--open');
+  });
+
+  document.addEventListener('click', (event) => {
+    const { target } = event;
+
+    if (!basicLocationOption.classList.contains('select__basic-option--open')) {
+      return;
+    }
+
+    if (!target.closest('.js-location')) {
+      basicLocationOption.classList.remove('select__basic-option--open');
+    }
   });
 }
 

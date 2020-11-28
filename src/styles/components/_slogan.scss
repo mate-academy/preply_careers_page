@@ -14,13 +14,14 @@
     height: 100%;
     z-index: -1;
     opacity: 0;
-    transform: translateY(20%);
+    transform: scaleY(0);
+    transform-origin: bottom center;
     transition: $scroll-transform-transition, $scroll-opacity-transition;
   }
 
   &--active::after {
     opacity: 1;
-    transform: translateY(0);
+    transform: scaleY(1);
   }
 
   &--green::after {

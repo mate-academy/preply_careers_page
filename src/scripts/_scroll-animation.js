@@ -1,10 +1,10 @@
-window.onload = () => {
+document.addEventListener('DOMContentLoaded', () => {
   const animItems = document.querySelectorAll('.js-scroll');
 
   animItems.forEach(animItem => {
     createObserver(animItem);
   });
-};
+});
 
 function createObserver(target) {
   const options = {

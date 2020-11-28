@@ -1,16 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const animItems = document.querySelectorAll('.js-scroll');
+export function addScrollAnimation() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const animItems = document.querySelectorAll('.js-scroll');
 
-  animItems.forEach(animItem => {
-    createObserver(animItem);
+    animItems.forEach(animItem => {
+      createObserver(animItem);
+    });
   });
-});
+};
 
 function createObserver(target) {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.2,
+    threshold: 0.3,
   };
 
   // eslint-disable-next-line no-undef
@@ -22,7 +24,7 @@ function createObserver(target) {
         return;
       }
 
-      if (entry.target.classList.contains('slogan')) {
+      if (entry.target.classList.contains('js-background')) {
         entry.target.classList.add('slogan--active');
       }
 

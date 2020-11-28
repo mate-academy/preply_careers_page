@@ -14,7 +14,10 @@
 
   &__img-wrp {
     height: 300px;
+    width: inherit;
     margin-bottom: 20px;
+    border-radius: $image-border-radius;
+    overflow: hidden;
   }
 
   &__img {
@@ -22,7 +25,8 @@
     height: inherit;
     width: inherit;
     border-radius: $image-border-radius;
-    @include hover(transform, scale(1.05));
+    transform: translateZ(0);
+    @include hover(transform, scale(1.1), 0.5s);
   }
 
   @media (max-width: 995px) {
@@ -40,20 +44,18 @@
 
     &__img-wrp {
       height: 180px;
-
-      &:first-child {
-        order: -2;
-      }
-
-      &:nth-child(4) {
-        order: -1;
-      }
+      margin-bottom: 10px;
     }
   }
 
   @media (max-width: 495px) {
     &__img-wrp {
       height: 80px;
+      border-radius: 10px;
+    }
+
+    &__img {
+      border-radius: 10px;
     }
   }
 }

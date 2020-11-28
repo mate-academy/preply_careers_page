@@ -14,11 +14,7 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(3, 435px);
+    grid-template-columns: repeat(3, auto);
     gap: $grid-gutter-width;
-  }
-
-  &__value {
-    margin-bottom: 20px;
   }
 }

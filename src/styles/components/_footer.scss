@@ -46,57 +46,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    fill: white;
   }
 
-  &__linkedin {
+  &__social {
     width: 40px;
     height: 40px;
-    background-image: url("../images/footer/linkedin.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    fill: white;
 
     @media (max-width: 767px) {
       height: 25px;
     }
-  }
 
-  &__facebook {
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/footer/facebook.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    @media (max-width: 767px) {
-      height: 25px;
-    }
-  }
-
-  &__instagram {
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/footer/instagram.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-
-    @media (max-width: 767px) {
-      height: 25px;
-    }
-  }
-
-  &__youtube {
-    width: 50px;
-    height: 35px;
-    background-image: url("../images/footer/youtube.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-
-    @media (max-width: 767px) {
-      height: 25px;
+    &--facebook {
+      width: 20px;
     }
   }
 }

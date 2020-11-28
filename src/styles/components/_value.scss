@@ -6,9 +6,9 @@
   border-radius: 20px;
 
   &__title {
+    @include font-style-bold(32px, 55px);
     writing-mode: vertical-lr;
-    text-align: end;
-    font-size: 32px;
+    text-align: right;
     color: white;
     transform: rotate(180deg);
   }

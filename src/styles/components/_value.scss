@@ -7,6 +7,7 @@
   background-color: $green;
   border-radius: 20px;
   cursor: pointer;
+  overflow: hidden;
 
   &--customer {
     background-color: #3d4d5f;
@@ -36,10 +37,11 @@
     display: flex;
     justify-content: space-between;
     opacity: 0;
-
-    transition: opacity 0.3s;
+    transform: translateY(100%);
+    transition: opacity 0.6s, transform 0.3s;
 
     &--active {
+      transform: translateY(0);
       opacity: 1;
     }
   }

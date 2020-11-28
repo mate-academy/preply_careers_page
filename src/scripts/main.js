@@ -7,5 +7,7 @@ import { addScrollAnimation } from './_scroll-animation';
 import './_change-content-animation';
 import './_set-year';
 
-addListenerForGalleryButtons();
-addScrollAnimation();
+document.addEventListener('DOMContentLoaded', () => {
+  addListenerForGalleryButtons();
+  addScrollAnimation();
+});

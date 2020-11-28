@@ -1,10 +1,8 @@
 export function addScrollAnimation() {
-  document.addEventListener('DOMContentLoaded', () => {
-    const animItems = document.querySelectorAll('.js-scroll');
+  const animItems = document.querySelectorAll('.js-scroll');
 
-    animItems.forEach(animItem => {
-      createObserver(animItem);
-    });
+  animItems.forEach(animItem => {
+    createObserver(animItem);
   });
 };
 

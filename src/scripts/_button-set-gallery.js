@@ -18,7 +18,7 @@ function changeGalleryPhotos({ target }) {
   [...photos].forEach(photo => {
     photo.classList.remove('gallery__photo--show');
 
-    if (target.innerText === photo.alt) {
+    if (target.dataset.index === photo.dataset.index) {
       photo.classList.add('gallery__photo--show');
     }
   });

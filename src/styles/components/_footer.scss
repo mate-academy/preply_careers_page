@@ -21,7 +21,7 @@
   }
 
   &__copyright {
-    color: #fff;
+    color: $text-color-light;
 
     @media (max-width: $md-breakpoint) {
       font-size: 16px;
@@ -34,7 +34,7 @@
     line-height: 32px;
 
     a {
-      color: #fff;
+      color: $text-color-light;
     }
 
     @media (max-width: $md-breakpoint) {

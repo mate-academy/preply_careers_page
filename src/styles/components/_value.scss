@@ -45,7 +45,6 @@
   }
 
   &__title {
-    margin-right: 40px;
     @include font-style-bold(32px, 55px);
     writing-mode: vertical-lr;
     text-align: right;

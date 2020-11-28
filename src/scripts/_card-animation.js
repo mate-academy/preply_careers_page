@@ -1,4 +1,4 @@
-const cards = document.querySelectorAll('.news');
+const cards = document.querySelectorAll('[data-hover="card"]');
 
 const updateStyles = (event, card) => {
   const { offsetWidth, offsetHeight } = card;

@@ -76,6 +76,8 @@
     outline: none;
     text-align: right;
 
+    transition: color 0.3s;
+
     &:hover {
       color: $green-light;
     }

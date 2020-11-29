@@ -12,13 +12,7 @@
     @include description($text-color-dark);
   }
 
-  &__wrapper {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: $grid-gutter-width;
-
-    @media (max-width: $xl-breakpoint) {
-      grid-template-columns: repeat(2, auto);
-    }
+  &__value {
+    margin-bottom: $grid-gutter-width;
   }
 }

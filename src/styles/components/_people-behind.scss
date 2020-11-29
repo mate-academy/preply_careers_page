@@ -28,8 +28,8 @@
     @include hover(transform, scale(1.1), 0.5s);
   }
 
-  @media (max-width: 995px) {
-    padding: 50px 24px;
+  @media (max-width: $lg-breakpoint) {
+    padding: 50px 24px 0;
 
     &__title {
       margin-bottom: 21px;
@@ -46,7 +46,7 @@
     }
   }
 
-  @media (max-width: 495px) {
+  @media (max-width: $sm-breakpoint) {
     &__img-wrp {
       height: 80px;
       border-radius: 10px;

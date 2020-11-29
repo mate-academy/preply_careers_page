@@ -130,7 +130,7 @@
     width: 100%;
   }
 
-  @media (max-width: 991px) {
+  @media (max-width: $lg-breakpoint) {
     &__controls {
       margin-bottom: 62px;
     }
@@ -153,7 +153,7 @@
     }
   }
 
-  @media (max-width: 680px) {
+  @media (max-width: $sm-breakpoint) {
     &__controls {
       margin-bottom: 42px;
     }

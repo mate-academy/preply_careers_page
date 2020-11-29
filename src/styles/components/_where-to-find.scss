@@ -21,7 +21,7 @@
     width: 100%;
   }
 
-  @media (max-width: 995px) {
+  @media (max-width: $lg-breakpoint) {
     padding: 24px;
 
     &__title {

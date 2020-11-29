@@ -1,4 +1,5 @@
 .footer {
+  padding: 10px 24px;
   background-color: $dark;
   min-height: 230px;
 
@@ -12,7 +13,7 @@
       width: 200px;
       height: 100px;
 
-      @media (max-width: 767px) {
+      @media (max-width: $md-breakpoint) {
         width: 110px;
         height: 60px;
       }
@@ -20,9 +21,9 @@
   }
 
   &__copyright {
-    color: #fff;
+    color: $text-color-light;
 
-    @media (max-width: 767px) {
+    @media (max-width: $md-breakpoint) {
       font-size: 16px;
     }
   }
@@ -33,10 +34,10 @@
     line-height: 32px;
 
     a {
-      color: #fff;
+      color: $text-color-light;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: $md-breakpoint) {
       font-size: 16px;
       text-align: left;
     }
@@ -48,55 +49,28 @@
     justify-content: space-between;
   }
 
-  &__linkedin {
+  &__sociall {
     width: 40px;
     height: 40px;
-    background-image: url("../images/footer/linkedin.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
 
-    @media (max-width: 767px) {
-      height: 25px;
+    color: $text-color-light;
+    transition: color 300ms;
+
+    &:hover {
+      color: $green;
     }
-  }
 
-  &__facebook {
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/footer/facebook.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-
-    @media (max-width: 767px) {
-      height: 25px;
+    @media (max-width: $md-breakpoint) {
+      height: 20px;
+      width: 20px;
     }
-  }
 
-  &__instagram {
-    width: 40px;
-    height: 40px;
-    background-image: url("../images/footer/instagram.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    &--facebook {
+      width: 20px;
 
-    @media (max-width: 767px) {
-      height: 25px;
-    }
-  }
-
-  &__youtube {
-    width: 50px;
-    height: 35px;
-    background-image: url("../images/footer/youtube.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-
-    @media (max-width: 767px) {
-      height: 25px;
+      @media (max-width: $md-breakpoint) {
+        width: 10px;
+      }
     }
   }
 }

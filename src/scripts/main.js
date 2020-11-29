@@ -1,8 +1,12 @@
 'use strict';
 
 import './_select';
-import './_where-to-find';
+import { addListenerForGalleryButtons } from './_button-set-gallery';
 import './_card-animation';
 import { addScrollAnimation } from './_scroll-animation';
+import './_set-year';
 
-addScrollAnimation();
+document.addEventListener('DOMContentLoaded', () => {
+  addListenerForGalleryButtons();
+  addScrollAnimation();
+});

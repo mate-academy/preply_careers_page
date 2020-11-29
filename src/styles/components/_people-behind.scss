@@ -15,7 +15,6 @@
   &__img-wrp {
     height: 300px;
     width: inherit;
-    margin-bottom: 20px;
     border-radius: $image-border-radius;
     overflow: hidden;
   }
@@ -30,7 +29,7 @@
   }
 
   @media (max-width: $lg-breakpoint) {
-    padding: 50px 24px;
+    padding: 50px 24px 0;
 
     &__title {
       margin-bottom: 21px;
@@ -44,7 +43,6 @@
 
     &__img-wrp {
       height: 180px;
-      margin-bottom: 10px;
     }
   }
 

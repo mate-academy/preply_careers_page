@@ -90,10 +90,6 @@
     border-radius: $image-border-radius;
   }
 
-  &__photo-item {
-    margin-bottom: 20px;
-  }
-
   &__photo-wrp {
     position: relative;
     width: inherit;
@@ -154,7 +150,6 @@
 
     &__photo-item {
       height: 250px;
-      margin-bottom: 15px;
     }
   }
 
@@ -173,7 +168,6 @@
 
     &__photo-item {
       height: 127px;
-      margin-bottom: 10px;
     }
   }
 }

@@ -103,6 +103,10 @@
     }
   }
 
+  &__error {
+    text-align: center;
+  }
+
   @media (max-width: 992px) {
     padding: 47px 20px;
   }
@@ -110,8 +114,4 @@
   @media (max-width: 500px) {
     padding: 47px 20px;
   }
-}
-
-.error {
-  text-align: center;
 }

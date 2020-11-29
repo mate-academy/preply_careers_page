@@ -11,18 +11,7 @@ export async function getData(groups) {
 
     const vacancies = await response.json();
 
-    vacancies.forEach(vacancy => {
-      const group = vacancy.categories.team;
-
-      if (groups[group]) {
-        groups[group] = [
-          ...groups[group],
-          vacancy,
-        ];
-      } else {
-        groups[group] = [vacancy];
-      }
-    });
+    return vacancies;
   } catch (error) {
     throw new Error(error);
   }

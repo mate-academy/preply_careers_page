@@ -20,7 +20,7 @@
     min-height: 70px;
     padding-bottom: 15px;
     margin-bottom: 15px;
-    border-bottom: 1px solid #cbd0d3;
+    border-bottom: 1px solid $select-border-color;
     display: grid;
     grid-template-columns: 80% 20%;
     align-items: center;
@@ -56,7 +56,7 @@
     text-align: left;
     font-weight: 700;
     line-height: 1.3em;
-    color: #b4bbbe;
+    color: $location-color;
 
     @media (max-width: 767px) {
       width: 100%;
@@ -101,7 +101,7 @@
     height: 15px;
     display: none;
 
-    @media (max-width: 767px) {
+    @media (max-width: $md-breakpoint) {
       display: block;
     }
   }
@@ -110,11 +110,11 @@
     text-align: center;
   }
 
-  @media (max-width: 992px) {
+  @media (max-width: $lg-breakpoint) {
     padding: 47px 20px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: $sm-breakpoint) {
     padding: 47px 20px;
   }
 }

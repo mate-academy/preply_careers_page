@@ -35,7 +35,7 @@
 
     &::after {
       content: url("../images/vacancies/arrow-down.svg");
-      color: #fff;
+      color: $text-color-light;
       line-height: 1;
 
       position: absolute;

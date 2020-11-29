@@ -9,6 +9,21 @@
   cursor: pointer;
   overflow: hidden;
 
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 0.7s, transform 0.5s;
+  }
+
+  &:hover {
+    >.value__main {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+  }
+
   &--customer {
     background-color: #3d4d5f;
   }
@@ -31,19 +46,6 @@
 
   &--curious {
     background-color: $red-light;
-  }
-
-  &__main {
-    display: flex;
-    justify-content: space-between;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.7s, transform 0.5s;
-
-    &--active {
-      transform: translateX(0);
-      opacity: 1;
-    }
   }
 
   &__title {
@@ -86,24 +88,6 @@
 
     &--text {
       @include font-style-normal(24px, 36px);
-    }
-  }
-
-  @media (max-width: $xl-breakpoint) {
-    &--hungry {
-      order: 1;
-    }
-
-    &--humble {
-      order: 2;
-    }
-
-    &--hackers {
-      order: 3;
-    }
-
-    &--curious {
-      order: 4;
     }
   }
 }

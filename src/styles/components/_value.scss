@@ -3,9 +3,56 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 30px 0 0;
-  background-color: $green;
   border-radius: 20px;
+  overflow: hidden;
   cursor: pointer;
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    transform: translateX(0);
+    opacity: 1;
+    transition: opacity 0.7s, transform 0.5s, visibility 0s linear 0s;
+  }
+
+  &__additional {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    opacity: 0;
+    color: white;
+    padding: 120px 25px 0;
+    transform: translateX(100px);
+    visibility: hidden;
+    transition: opacity 0.7s, transform 0.5s, visibility 0s linear 700ms;
+
+    &--title {
+      margin-bottom: 10px;
+      @include font-style-bold(32px, 12px);
+    }
+
+    &--text {
+      @include font-style-normal(24px, 36px);
+    }
+  }
+
+  &:hover {
+    >.value__main {
+      visibility: hidden;
+      opacity: 0;
+      transform: translateX(-100px);
+      transition: opacity 0.7s, transform 0.5s, visibility 0s linear 700ms;
+    }
+
+    >.value__additional {
+      visibility: visible;
+      transform: translateX(0);
+      opacity: 1;
+      transition: opacity 0.7s, transform 0.5s, visibility 0s linear 0s;
+    }
+  }
 
   &--customer {
     background-color: #3d4d5f;
@@ -31,18 +78,6 @@
     background-color: $red-light;
   }
 
-  &__main {
-    display: flex;
-    justify-content: space-between;
-    opacity: 0;
-
-    transition: opacity 0.3s;
-
-    &--active {
-      opacity: 1;
-    }
-  }
-
   &__title {
     @include font-style-bold(32px, 55px);
     writing-mode: vertical-lr;
@@ -52,37 +87,10 @@
   }
 
   &__image {
-    display: block;
-
-    border-radius: 20px;
-    height: 265px;
-    width: 325px;
-  }
-
-  &__additional {
-    position: absolute;
-    bottom: 0;
-    height: inherit;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    opacity: 0;
-    color: white;
-    padding: 0 30px 70px;
-
-    transition: opacity 0.3s;
-
-    &--active {
-      opacity: 1;
-    }
-
-    &--title {
-      margin-bottom: 10px;
-      @include font-style-bold(32px, 12px);
-    }
-
-    &--text {
-      @include font-style-normal(24px, 36px);
-    }
+    border-radius: $image-border-radius;
+    object-fit: contain;
+    object-position: bottom right;
+    height: 260px;
+    width: 70%;
   }
 }

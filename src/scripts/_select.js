@@ -1,14 +1,27 @@
 import { getData } from '../api/api';
 
 const teamSelect = document.querySelector('.js-team');
-const basicTeamOption = teamSelect.querySelector('.js-select');
 const locationSelect = document.querySelector('.js-location');
+const basicTeamOption = teamSelect.querySelector('.js-select');
 const basicLocationOption = locationSelect.querySelector('.js-select');
-let vacancies;
-let location;
-const list = document.querySelector('.vacancies__list');
+const list = document.querySelector('.js-list');
 const groups = {};
 let filteredGroups;
+
+function createGroups(vacancies) {
+  vacancies.forEach(vacancy => {
+    const group = vacancy.categories.team;
+
+    if (groups[group]) {
+      groups[group] = [
+        ...groups[group],
+        vacancy,
+      ];
+    } else {
+      groups[group] = [vacancy];
+    }
+  });
+}
 
 function countGroupedVacancies(select, teams) {
   const options = select.querySelectorAll('.js-option');
@@ -24,109 +37,94 @@ function countGroupedVacancies(select, teams) {
   setBasicOption(basicTeamOption, options);
 }
 
-function setBasicOption(select, options) {
-  const wrapper = select.closest('.js-group');
+function setBasicOption(basicOption, options) {
+  const wrapper = basicOption.closest('.js-group');
   const option = wrapper.querySelectorAll('.js-option')[0];
   const text = option.textContent;
 
-  if (select.textContent) {
-    const textCut = select.textContent.split(' (')[0];
+  if (basicOption.textContent) {
+    const textCut = basicOption.textContent.split(' (')[0];
 
-    select.textContent = [...options].find((opt) => {
+    basicOption.textContent = [...options].find((opt) => {
       return opt.textContent.includes(textCut);
     }).textContent;
 
     return;
   }
 
-  select.textContent = text;
+  basicOption.textContent = text;
 
   if (wrapper.classList.contains('js-team')) {
-    chooseTeam(text, select);
+    chooseTeam(option, basicOption);
   } else {
-    chooseLocation(option, select);
+    chooseLocation(option, basicOption);
   }
 }
 
-function toggleTeamSelect() {
-  teamSelect.addEventListener('click', (event) => {
+function toggleSelect(select, func, basicOption, selectPurpose) {
+  select.addEventListener('click', (event) => {
     const { target } = event;
 
     if (target.classList.contains('js-option')) {
-      chooseTeam(target.textContent, basicTeamOption);
+      func(target, basicOption);
     }
 
-    basicTeamOption.classList.toggle('select__basic-option--open');
+    basicOption.classList.toggle('select__basic-option--open');
   });
 
   document.addEventListener('click', (event) => {
     const { target } = event;
 
-    if (!basicTeamOption.classList.contains('select__basic-option--open')) {
+    if (!basicOption.classList.contains('select__basic-option--open')) {
       return;
     }
 
-    if (!target.closest('.js-team')) {
-      basicTeamOption.classList.remove('select__basic-option--open');
+    if (!target.closest(`.js-${selectPurpose}`)) {
+      basicOption.classList.remove('select__basic-option--open');
     }
   });
 }
 
-function toggleLocationSelect() {
-  locationSelect.addEventListener('click', (event) => {
-    const { target } = event;
-
-    if (target.classList.contains('js-option')) {
-      chooseLocation(target, basicLocationOption);
-    }
-
-    basicLocationOption.classList.toggle('select__basic-option--open');
-  });
-
-  document.addEventListener('click', (event) => {
-    const { target } = event;
-
-    if (!basicLocationOption.classList.contains('select__basic-option--open')) {
-      return;
-    }
-
-    if (!target.closest('.js-location')) {
-      basicLocationOption.classList.remove('select__basic-option--open');
-    }
-  });
-}
-
-function chooseTeam(text, select) {
-  vacancies = filteredGroups[text.split(' ')[0]];
+function chooseTeam(target, select) {
+  const text = target.textContent;
+  const team = text.split(' ')[0];
 
   select.textContent = text;
 
-  renderVacancies(vacancies);
+  renderVacancies(team);
 }
 
-function renderVacancies(vacanciesToRender) {
+function chooseLocation(target, select) {
+  const text = target.textContent;
+  const teamText = basicTeamOption.textContent.split(' (')[0];
+
+  if (target.id !== 'all') {
+    for (const key in groups) {
+      filteredGroups[key] = [...groups[key]].filter((vacancy) => {
+        return vacancy.categories.location.includes(text);
+      });
+    }
+  } else {
+    filteredGroups = { ...groups };
+  }
+  countGroupedVacancies(teamSelect, filteredGroups);
+
+  select.textContent = text;
+  renderVacancies(teamText);
+}
+
+function renderVacancies(text) {
   list.innerHTML = '';
 
-  let vacanciesToShow = vacanciesToRender;
+  const vacanciesToShow = filteredGroups[text];
 
-  if (!vacanciesToShow) {
-    vacanciesToShow = [];
-
+  if (!vacanciesToShow || vacanciesToShow.length === 0) {
     const noVacancies = document.createElement('p');
 
     noVacancies.textContent = 'No vacancies available here';
-
     list.append(noVacancies);
 
     return;
-  }
-
-  if (location) {
-    vacanciesToShow = location === 'All locations'
-      ? vacanciesToShow
-      : vacanciesToShow.filter(vacancy => {
-        return vacancy.categories.location.includes(location);
-      });
   }
 
   vacanciesToShow.forEach(vacancy => {
@@ -147,35 +145,6 @@ function renderVacancies(vacanciesToRender) {
 
     list.append(row);
   });
-
-  if (vacanciesToShow.length === 0) {
-    const noVacancies = document.createElement('p');
-
-    noVacancies.textContent = 'No vacancies available here';
-
-    list.append(noVacancies);
-  }
-}
-
-function chooseLocation(target, select) {
-  const text = target.textContent;
-
-  if (location) {
-    if (target.id !== 'all') {
-      for (const key in groups) {
-        filteredGroups[key] = [...groups[key]].filter((vacancy) => {
-          return vacancy.categories.location.includes(text);
-        });
-      }
-    } else {
-      filteredGroups = { ...groups };
-    }
-    countGroupedVacancies(teamSelect, filteredGroups);
-  }
-
-  location = text;
-  select.textContent = text;
-  renderVacancies(vacancies);
 }
 
 function renderError() {
@@ -183,20 +152,31 @@ function renderError() {
 
   vacanciesSection.innerHTML = `
     <div>
-      <p class="error">Can't load the vacancies. Try to reload the page</p>
+      <p class="vacancies__error">
+        Can't load the vacancies. Try to reload the page.
+      </p>
     </div>
   `;
 }
 
 async function startApplication() {
   try {
-    await getData(groups);
+    const vacancies = await getData();
+
+    createGroups(vacancies);
     filteredGroups = { ...groups };
 
     countGroupedVacancies(teamSelect, groups);
     setBasicOption(basicLocationOption);
-    toggleLocationSelect();
-    toggleTeamSelect();
+
+    toggleSelect(
+      locationSelect,
+      chooseLocation,
+      basicLocationOption,
+      'location'
+    );
+
+    toggleSelect(teamSelect, chooseTeam, basicTeamOption, 'team');
   } catch (error) {
     renderError();
   }

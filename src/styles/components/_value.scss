@@ -2,25 +2,55 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: stretch;
   padding: 30px 0 0;
-  background-color: $green;
   border-radius: 20px;
-  cursor: pointer;
   overflow: hidden;
+  cursor: pointer;
 
   &__main {
     display: flex;
     justify-content: space-between;
     transform: translateX(0);
     opacity: 1;
-    transition: opacity 0.7s, transform 0.5s;
+    transition: opacity 0.7s, transform 0.5s, visibility 0s linear 0s;
+  }
+
+  &__additional {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    opacity: 0;
+    color: white;
+    padding: 0 25px 70px;
+    transform: translateX(100px);
+    visibility: hidden;
+    transition: opacity 0.7s, transform 0.5s, visibility 0s linear 300ms;
+
+    &--title {
+      margin-bottom: 10px;
+      @include font-style-bold(32px, 12px);
+    }
+
+    &--text {
+      @include font-style-normal(24px, 36px);
+    }
   }
 
   &:hover {
     >.value__main {
+      visibility: hidden;
       opacity: 0;
-      transform: translateX(-100%);
+      transform: translateX(-100px);
+      transition: opacity 0.7s, transform 0.5s, visibility 0s linear 300ms;
+    }
+
+    >.value__additional {
+      visibility: visible;
+      transform: translateX(0);
+      opacity: 1;
+      transition: opacity 0.7s, transform 0.5s, visibility 0s linear 0s;
     }
   }
 
@@ -62,32 +92,5 @@
     object-position: bottom right;
     height: 260px;
     width: 70%;
-  }
-
-  &__additional {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    opacity: 0;
-    color: white;
-    padding: 0 25px 70px;
-    transform: translateX(100%);
-    transition: opacity 0.7s, transform 0.5s;
-
-    &--active {
-      transform: translateX(0);
-      opacity: 1;
-    }
-
-    &--title {
-      margin-bottom: 10px;
-      @include font-style-bold(32px, 12px);
-    }
-
-    &--text {
-      @include font-style-normal(24px, 36px);
-    }
   }
 }

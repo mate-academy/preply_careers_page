@@ -1,6 +1,5 @@
 .promo {
   padding: 10px;
-  min-height: 630px;
   background: linear-gradient(
     180deg,
     rgba(47, 61, 77, 0.6) 0%,
@@ -12,12 +11,13 @@
 
   color: $text-color-light;
 
-  @media (max-width: $md-breakpoint) {
-    min-height: 455px;
-  }
-
   &__container {
     position: relative;
+    min-height: 630px;
+
+    @media (max-width: $md-breakpoint) {
+      min-height: 455px;
+    }
   }
 
   &__top {
@@ -130,7 +130,7 @@
     &--small {
       display: none;
       background-image: url("../images/promo/glassdoor-small.svg");
-      top: 125%;
+      bottom: -70px;
       left: calc(50% - 100px);
       width: 200px;
       height: 150px;

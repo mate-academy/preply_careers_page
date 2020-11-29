@@ -10,26 +10,27 @@
     width: 448px;
     font-weight: 700;
     font-size: 28px;
-    color: #fff;
+    color: $text-color-light;
     cursor: pointer;
 
-    @media (max-width: 767px) {
+    @media (max-width: $md-breakpoint) {
       max-width: 90%;
       margin: 0 auto;
       width: 320px;
-      height: 50px;
       font-size: 16px;
-      padding: 17px 20px;
     }
   }
 
   &__basic-option {
     border-radius: 10px;
     border: none;
-    height: 87px;
     padding: 28px 39px;
 
     transition: background-color 0.2s;
+
+    @media (max-width: $md-breakpoint) {
+      padding: 15px 20px;
+    }
 
     &::after {
       content: url("../images/vacancies/arrow-down.svg");
@@ -43,8 +44,12 @@
 
       pointer-events: none;
 
-      @media (max-width: 767px) {
-        top: 18px;
+      transition: transform 300ms;
+
+      @media (max-width: $md-breakpoint) {
+        top: 15px;
+        right: 15px;
+        transform: scale(0.5);
       }
     }
 
@@ -54,6 +59,10 @@
 
       &::after {
         transform: rotate(180deg);
+
+        @media (max-width: $md-breakpoint) {
+          transform: rotate(180deg) scale(0.5);
+        }
       }
     }
 
@@ -87,13 +96,25 @@
     transform: translateY(-100%);
     opacity: 0;
 
+    @media (max-width: $md-breakpoint) {
+      padding: 10px 20px;
+    }
+
     &:first-of-type {
       padding-top: 30px;
+
+      @media (max-width: $md-breakpoint) {
+        padding-top: 15px;
+      }
     }
 
     &:last-of-type {
       padding-bottom: 30px;
       border-radius: 0 0 10px 10px;
+
+      @media (max-width: $md-breakpoint) {
+        padding-bottom: 20px;
+      }
     }
 
     &:hover {

@@ -10,7 +10,7 @@ function createObserver(target) {
   const options = {
     root: null,
     rootMargin: '0px',
-    threshold: 0.3,
+    threshold: target.offsetHeight < window.innerHeight ? 0.4 : 0.2,
   };
 
   // eslint-disable-next-line no-undef
@@ -30,7 +30,7 @@ function createObserver(target) {
       let delayValue = 0;
 
       elements.forEach(element => {
-        element.style['transition-delay'] = `${delayValue += 0.3}s`;
+        element.style['transition-delay'] = `${delayValue += 0.15}s`;
         element.classList.add('scroll--active');
       });
 

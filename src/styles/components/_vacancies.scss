@@ -47,6 +47,7 @@
   &__position {
     max-width: 65%;
     font-weight: 700;
+    line-height: 1.3em;
     color: $text-color-dark;
   }
 
@@ -54,7 +55,7 @@
     width: 20%;
     text-align: left;
     font-weight: 700;
-    line-height: 25px;
+    line-height: 1.3em;
     color: #b4bbbe;
 
     @media (max-width: 767px) {

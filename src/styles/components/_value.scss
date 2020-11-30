@@ -64,6 +64,18 @@
     }
   }
 
+  &__title {
+    position: absolute;
+    top: 20px;
+    @include font-style-bold(32px, 55px);
+    writing-mode: vertical-lr;
+    text-align: right;
+    color: $text-color-light;
+    transform: rotate(180deg);
+    transition: transform 0.5s, visibility 0s linear 0s;
+    z-index: 1;
+  }
+
   &__additional {
     position: absolute;
     top: 0;
@@ -75,7 +87,7 @@
     padding: 120px 20px 0;
     transform: translateX(-100px);
     visibility: hidden;
-    transition: opacity 0.5s, transform 0.5s, visibility 0s linear 700ms;
+    transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0.5s;
 
     &--title {
       margin-bottom: 10px;
@@ -92,7 +104,13 @@
       visibility: hidden;
       opacity: 0;
       transform: translateX(100px);
-      transition: opacity 0.5s, transform 0.5s, visibility 0s linear 700ms;
+      transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0.5s;
+    }
+
+    >.value__title {
+      visibility: hidden;
+      transform: rotate(180deg) translateX(50px);
+      transition: transform 0.5s, visibility 0s linear 0.5s;
     }
 
     >.value__additional {
@@ -101,16 +119,6 @@
       opacity: 1;
       transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0s;
     }
-  }
-
-  &__title {
-    position: absolute;
-    top: 20px;
-    @include font-style-bold(32px, 55px);
-    writing-mode: vertical-lr;
-    text-align: right;
-    color: $text-color-light;
-    transform: rotate(180deg);
   }
 
   @media (max-width: $xl-breakpoint) {

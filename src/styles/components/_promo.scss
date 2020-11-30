@@ -96,8 +96,48 @@
   }
 
   &__glassdoor {
-    background-repeat: no-repeat;
-    background-size: contain;
+    position: absolute;
+
+    transition: color 300ms;
+
+    &:hover {
+      color: #3bb3bd;
+    }
+
+    &--big {
+      right: 0;
+      height: 160px;
+      width: 250px;
+
+      @media (max-width: $md-breakpoint) {
+        display: none;
+      }
+    }
+
+    &--small {
+      display: none;
+      bottom: -70px;
+      left: calc(50% - 100px);
+      width: 200px;
+      height: 150px;
+
+      @media (max-width: $md-breakpoint) {
+        display: block;
+      }
+
+      p {
+        font-size: 9px;
+        text-align: center;
+        color: $text-color-light;
+      }
+
+      div {
+        margin-bottom: 30%;
+      }
+    }
+  }
+
+  &__glassdoor-inner {
     position: absolute;
 
     display: flex;
@@ -106,7 +146,7 @@
     justify-content: center;
 
     &--big {
-      background-image: url("../images/promo/glassdoor-big.svg");
+      top: 0;
       right: 0;
       height: 160px;
       width: 250px;
@@ -121,15 +161,9 @@
         display: flex;
         align-items: flex-start;
       }
-
-      @media (max-width: $md-breakpoint) {
-        display: none;
-      }
     }
 
     &--small {
-      display: none;
-      background-image: url("../images/promo/glassdoor-small.svg");
       bottom: -70px;
       left: calc(50% - 100px);
       width: 200px;

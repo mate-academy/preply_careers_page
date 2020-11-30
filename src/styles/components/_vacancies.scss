@@ -7,13 +7,14 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    position: relative;
     z-index: 1;
   }
 
   &__list {
-    text-align: center;
+    width: 100%;
     margin-top: 63px;
-    position: relative;
+    text-align: center;
   }
 
   &__item {

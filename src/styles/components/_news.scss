@@ -52,6 +52,14 @@
     }
   }
 
+  &__link {
+    display: block;
+
+    &:hover {
+      color: inherit;
+    }
+  }
+
   &__wrapper {
     height: 100%;
 

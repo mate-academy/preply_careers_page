@@ -52,16 +52,12 @@
   }
 
   &__img {
+    width: 100%;
     align-self: flex-end;
-
-    &--center {
-      align-self: center;
-    }
   }
 
   &__btn {
     margin-top: 8px;
-    margin-bottom: 28px;
   }
 
   @media (max-width: $xl-breakpoint) {
@@ -73,7 +69,6 @@
     }
 
     &__text {
-      margin-bottom: 20px;
       text-align: center;
     }
 

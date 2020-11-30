@@ -12,8 +12,13 @@
   }
 
   &__list {
-    text-align: center;
+    width: 100%;
     margin-top: 63px;
+    text-align: center;
+
+    @media (max-width: $lg-breakpoint) {
+      margin-top: 43px;
+    }
   }
 
   &__item {
@@ -111,10 +116,6 @@
   }
 
   @media (max-width: $lg-breakpoint) {
-    padding: 47px 20px;
-  }
-
-  @media (max-width: $sm-breakpoint) {
     padding: 47px 20px;
   }
 }

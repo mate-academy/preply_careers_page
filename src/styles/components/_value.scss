@@ -14,7 +14,6 @@
   }
 
   &__image {
-    box-sizing: content-box;
     float: right;
     border-radius: $image-border-radius;
     object-fit: contain;
@@ -25,6 +24,12 @@
 
   &--customer {
     background-color: $card-customer-color;
+
+    >.value__main {
+      >.value__image {
+        padding: 20px 5px 0 0;
+      }
+    }
   }
 
   &--human {
@@ -51,6 +56,12 @@
 
   &--curious {
     background-color: $card-curious-color;
+
+    >.value__main {
+      >.value__image {
+        object-fit: cover;
+      }
+    }
   }
 
   &__additional {
@@ -126,8 +137,8 @@
     }
 
     &__image {
-      height: 100%;
-      width: 90%;
+      height: 130px;
+      width: 95%;
     }
   }
 }

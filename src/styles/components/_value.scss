@@ -13,6 +13,51 @@
     transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0s;
   }
 
+  &__image {
+    float: right;
+    border-radius: $image-border-radius;
+    object-fit: contain;
+    object-position: bottom right;
+    width: auto;
+    height: 265px;
+  }
+
+  &--customer {
+    background-color: $card-customer-color;
+
+    >.value__main {
+      >.value__image {
+        padding: 20px 5px 0 0;
+      }
+    }
+  }
+
+  &--human {
+    background-color: $card-human-color;
+
+    >.value__main {
+      >.value__image {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &--hackers {
+    background-color: $card-hackers-color;
+  }
+
+  &--hungry {
+    background-color: $card-hungry-color;
+  }
+
+  &--humble {
+    background-color: $card-humble-color;
+  }
+
+  &--curious {
+    background-color: $card-curious-color;
+  }
+
   &__additional {
     position: absolute;
     top: 0;
@@ -52,30 +97,6 @@
     }
   }
 
-  &--customer {
-    background-color: $card-customer-color;
-  }
-
-  &--human {
-    background-color: $card-human-color;
-  }
-
-  &--hackers {
-    background-color: $card-hackers-color;
-  }
-
-  &--hungry {
-    background-color: $card-hungry-color;
-  }
-
-  &--humble {
-    background-color: $card-humble-color;
-  }
-
-  &--curious {
-    background-color: $card-curious-color;
-  }
-
   &__title {
     position: absolute;
     top: 20px;
@@ -84,15 +105,6 @@
     text-align: right;
     color: $text-color-light;
     transform: rotate(180deg);
-  }
-
-  &__image {
-    float: right;
-    border-radius: $image-border-radius;
-    object-fit: contain;
-    object-position: bottom right;
-    width: auto;
-    height: 265px;
   }
 
   @media (max-width: $md-breakpoint) {

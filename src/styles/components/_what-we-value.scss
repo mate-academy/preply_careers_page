@@ -12,10 +12,6 @@
     @include description($text-color-dark);
   }
 
-  &__value {
-    margin-bottom: $grid-gutter-width;
-  }
-
   @media (max-width: $lg-breakpoint) {
     padding: 50px 20px 0;
   }

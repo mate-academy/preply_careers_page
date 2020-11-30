@@ -22,7 +22,7 @@
     flex-direction: column;
     text-align: left;
     opacity: 0;
-    color: white;
+    color: $text-color-light;
     padding: 120px 25px 0;
     transform: translateX(100px);
     visibility: hidden;
@@ -82,7 +82,7 @@
     @include font-style-bold(32px, 55px);
     writing-mode: vertical-lr;
     text-align: right;
-    color: white;
+    color: $text-color-light;
     transform: rotate(180deg);
   }
 

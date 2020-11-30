@@ -2,17 +2,15 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 30px 0 0;
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
 
   &__main {
-    display: flex;
-    justify-content: space-between;
+    position: relative;
     transform: translateX(0);
     opacity: 1;
-    transition: opacity 0.7s, transform 0.5s, visibility 0s linear 0s;
+    transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0s;
   }
 
   &__additional {
@@ -24,9 +22,9 @@
     opacity: 0;
     color: white;
     padding: 120px 25px 0;
-    transform: translateX(100px);
+    transform: translateX(-100px);
     visibility: hidden;
-    transition: opacity 0.7s, transform 0.5s, visibility 0s linear 700ms;
+    transition: opacity 0.5s, transform 0.5s, visibility 0s linear 700ms;
 
     &--title {
       margin-bottom: 10px;
@@ -42,43 +40,45 @@
     >.value__main {
       visibility: hidden;
       opacity: 0;
-      transform: translateX(-100px);
-      transition: opacity 0.7s, transform 0.5s, visibility 0s linear 700ms;
+      transform: translateX(100px);
+      transition: opacity 0.5s, transform 0.5s, visibility 0s linear 700ms;
     }
 
     >.value__additional {
       visibility: visible;
       transform: translateX(0);
       opacity: 1;
-      transition: opacity 0.7s, transform 0.5s, visibility 0s linear 0s;
+      transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0s;
     }
   }
 
   &--customer {
-    background-color: #3d4d5f;
+    background-color: $card-customer-color;
   }
 
   &--human {
-    background-color: $green;
+    background-color: $card-human-color;
   }
 
   &--hackers {
-    background-color: #6c7379;
+    background-color: $card-hackers-color;
   }
 
   &--hungry {
-    background-color: #b63333;
+    background-color: $card-hungry-color;
   }
 
   &--humble {
-    background-color: #755462;
+    background-color: $card-humble-color;
   }
 
   &--curious {
-    background-color: $red-light;
+    background-color: $card-curious-color;
   }
 
   &__title {
+    position: absolute;
+    top: 20px;
     @include font-style-bold(32px, 55px);
     writing-mode: vertical-lr;
     text-align: right;
@@ -87,10 +87,33 @@
   }
 
   &__image {
+    float: right;
     border-radius: $image-border-radius;
     object-fit: contain;
     object-position: bottom right;
-    height: 260px;
-    width: 70%;
+    width: auto;
+    height: 265px;
+  }
+
+  @media (max-width: $md-breakpoint) {
+    &__title {
+      font-size: 20px;
+      line-height: 30px;
+    }
+
+    &__image {
+      height: 150px;
+    }
+  }
+
+  @media (max-width: $sm-breakpoint) {
+    &__title {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    &__image {
+      height: 130px;
+    }
   }
 }

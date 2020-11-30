@@ -97,6 +97,10 @@
     transform: translateY(-100%);
     opacity: 0;
 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     @media (max-width: $md-breakpoint) {
       padding: 10px 20px;
     }

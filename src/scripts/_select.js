@@ -5,12 +5,13 @@ const locationSelect = document.querySelector('.js-location');
 const basicTeamOption = teamSelect.querySelector('.js-select');
 const basicLocationOption = locationSelect.querySelector('.js-select');
 const list = document.querySelector('.js-list');
-const groups = {};
-let filteredGroups;
+const teams = {};
+let filteredTeams;
+const locations = {};
 
-function createGroups(vacancies) {
+function createGroups(vacancies, groups, category) {
   vacancies.forEach(vacancy => {
-    const group = vacancy.categories.team;
+    const group = vacancy.categories[category];
 
     if (groups[group]) {
       groups[group] = [
@@ -23,23 +24,38 @@ function createGroups(vacancies) {
   });
 }
 
-function countGroupedVacancies(select, teams) {
-  const options = select.querySelectorAll('.js-option');
+function countGroupedVacancies(select, groups) {
+  const set = Object.keys(groups);
+  const optionsList = select.querySelector('.js-options');
 
-  options.forEach((option) => {
-    const text = option.textContent.split(' (')[0];
+  if (optionsList.firstElementChild
+    && optionsList.firstElementChild.id !== 'all') {
+    optionsList.innerHTML = '';
+  }
 
-    const length = teams[text] ? teams[text].length : '0';
+  for (const value of set) {
+    const option = document.createElement('li');
+    const length = groups[value].length;
 
-    option.textContent = `${text} (${length})`;
-  });
+    option.classList.add('js-option');
+    option.classList.add('select__option');
 
-  setBasicOption(basicTeamOption, options);
+    if (select.classList.contains('js-team')) {
+      option.textContent = `${value} (${length})`;
+    } else {
+      option.textContent = value;
+    }
+
+    optionsList.append(option);
+  }
+
+  setBasicOption(basicTeamOption);
 }
 
-function setBasicOption(basicOption, options) {
+function setBasicOption(basicOption) {
   const wrapper = basicOption.closest('.js-group');
-  const option = wrapper.querySelectorAll('.js-option')[0];
+  const options = wrapper.querySelectorAll('.js-option');
+  const option = options[0];
   const text = option.textContent;
 
   if (basicOption.textContent) {
@@ -85,38 +101,38 @@ function toggleSelect(select, func, basicOption, selectPurpose) {
   });
 }
 
-function chooseTeam(target, select) {
+function chooseTeam(target, basicOption) {
   const text = target.textContent;
-  const team = text.split(' ')[0];
+  const team = text.split(' (')[0];
 
-  select.textContent = text;
+  basicOption.textContent = text;
 
   renderVacancies(team);
 }
 
-function chooseLocation(target, select) {
+function chooseLocation(target, basicOption) {
   const text = target.textContent;
   const teamText = basicTeamOption.textContent.split(' (')[0];
 
   if (target.id !== 'all') {
-    for (const key in groups) {
-      filteredGroups[key] = [...groups[key]].filter((vacancy) => {
-        return vacancy.categories.location.includes(text);
+    for (const key in teams) {
+      filteredTeams[key] = [...teams[key]].filter((vacancy) => {
+        return vacancy.categories.location === text;
       });
     }
   } else {
-    filteredGroups = { ...groups };
+    filteredTeams = { ...teams };
   }
-  countGroupedVacancies(teamSelect, filteredGroups);
 
-  select.textContent = text;
+  countGroupedVacancies(teamSelect, filteredTeams);
+  basicOption.textContent = text;
   renderVacancies(teamText);
 }
 
 function renderVacancies(text) {
   list.innerHTML = '';
 
-  const vacanciesToShow = filteredGroups[text];
+  const vacanciesToShow = filteredTeams[text];
 
   if (!vacanciesToShow || vacanciesToShow.length === 0) {
     const noVacancies = document.createElement('p');
@@ -163,10 +179,12 @@ async function startApplication() {
   try {
     const vacancies = await getData();
 
-    createGroups(vacancies);
-    filteredGroups = { ...groups };
+    createGroups(vacancies, teams, 'team');
+    createGroups(vacancies, locations, 'location');
+    filteredTeams = { ...teams };
 
-    countGroupedVacancies(teamSelect, groups);
+    countGroupedVacancies(teamSelect, teams);
+    countGroupedVacancies(locationSelect, locations);
     setBasicOption(basicLocationOption);
 
     toggleSelect(

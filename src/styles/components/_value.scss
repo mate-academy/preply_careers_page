@@ -13,6 +13,57 @@
     transition: opacity 0.5s, transform 0.5s, visibility 0s linear 0s;
   }
 
+  &__image {
+    float: right;
+    border-radius: $image-border-radius;
+    object-fit: contain;
+    object-position: bottom right;
+    width: auto;
+    height: 300px;
+  }
+
+  &--customer {
+    background-color: $card-customer-color;
+
+    >.value__main {
+      >.value__image {
+        padding: 20px 5px 0 0;
+      }
+    }
+  }
+
+  &--human {
+    background-color: $card-human-color;
+
+    >.value__main {
+      >.value__image {
+        padding-top: 20px;
+      }
+    }
+  }
+
+  &--hackers {
+    background-color: $card-hackers-color;
+  }
+
+  &--hungry {
+    background-color: $card-hungry-color;
+  }
+
+  &--humble {
+    background-color: $card-humble-color;
+  }
+
+  &--curious {
+    background-color: $card-curious-color;
+
+    >.value__main {
+      >.value__image {
+        object-fit: cover;
+      }
+    }
+  }
+
   &__additional {
     position: absolute;
     top: 0;
@@ -21,7 +72,7 @@
     text-align: left;
     opacity: 0;
     color: $text-color-light;
-    padding: 120px 25px 0;
+    padding: 120px 20px 0;
     transform: translateX(-100px);
     visibility: hidden;
     transition: opacity 0.5s, transform 0.5s, visibility 0s linear 700ms;
@@ -52,30 +103,6 @@
     }
   }
 
-  &--customer {
-    background-color: $card-customer-color;
-  }
-
-  &--human {
-    background-color: $card-human-color;
-  }
-
-  &--hackers {
-    background-color: $card-hackers-color;
-  }
-
-  &--hungry {
-    background-color: $card-hungry-color;
-  }
-
-  &--humble {
-    background-color: $card-humble-color;
-  }
-
-  &--curious {
-    background-color: $card-curious-color;
-  }
-
   &__title {
     position: absolute;
     top: 20px;
@@ -86,13 +113,10 @@
     transform: rotate(180deg);
   }
 
-  &__image {
-    float: right;
-    border-radius: $image-border-radius;
-    object-fit: contain;
-    object-position: bottom right;
-    width: auto;
-    height: 265px;
+  @media (max-width: $xl-breakpoint) {
+    &__image {
+      height: 265px;
+    }
   }
 
   @media (max-width: $md-breakpoint) {
@@ -114,6 +138,7 @@
 
     &__image {
       height: 130px;
+      width: 95%;
     }
   }
 }

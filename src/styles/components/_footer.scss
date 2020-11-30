@@ -77,5 +77,15 @@
         width: 10px;
       }
     }
+
+    &--youtube {
+      width: 50px;
+      height: 35px;
+
+      @media (max-width: $md-breakpoint) {
+        width: 25px;
+        height: 20px;
+      }
+    }
   }
 }

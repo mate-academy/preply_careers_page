@@ -12,11 +12,21 @@
     @include description($text-color-dark);
   }
 
-  &__value {
-    margin-bottom: $grid-gutter-width;
+  @media (max-width: $lg-breakpoint) {
+    padding: 50px 20px;
   }
 
-  @media (max-width: $lg-breakpoint) {
-    padding: 50px 20px 0;
+  @media (max-width: $sm-breakpoint) {
+    padding: 30px 10px;
+
+    &__title {
+      font-size: 38px;
+      line-height: 45px;
+    }
+
+    &__desctipiton {
+      font-size: 16px;
+      line-height: 26px;
+    }
   }
 }

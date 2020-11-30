@@ -5,12 +5,13 @@ const locationSelect = document.querySelector('.js-location');
 const basicTeamOption = teamSelect.querySelector('.js-select');
 const basicLocationOption = locationSelect.querySelector('.js-select');
 const list = document.querySelector('.js-list');
-const groups = {};
-let filteredGroups;
+const teams = {};
+let filteredTeams;
+const locations = {};
 
-function createGroups(vacancies) {
+function createGroups(vacancies, groups, category) {
   vacancies.forEach(vacancy => {
-    const group = vacancy.categories.team;
+    const group = vacancy.categories[category];
 
     if (groups[group]) {
       groups[group] = [
@@ -23,19 +24,28 @@ function createGroups(vacancies) {
   });
 }
 
-function countGroupedVacancies(select, teams) {
-  const set = Object.keys(teams);
+function countGroupedVacancies(select, groups) {
+  const set = Object.keys(groups);
   const optionsList = select.querySelector('.js-options');
 
-  optionsList.innerHTML = '';
+  if (optionsList.firstElementChild
+    && optionsList.firstElementChild.id !== 'all') {
+    optionsList.innerHTML = '';
+  }
 
   for (const value of set) {
     const option = document.createElement('li');
-    const length = teams[value].length;
+    const length = groups[value].length;
 
     option.classList.add('js-option');
     option.classList.add('select__option');
-    option.textContent = `${value} (${length})`;
+
+    if (select.classList.contains('js-team')) {
+      option.textContent = `${value} (${length})`;
+    } else {
+      option.textContent = value;
+    }
+
     optionsList.append(option);
   }
 
@@ -105,16 +115,16 @@ function chooseLocation(target, basicOption) {
   const teamText = basicTeamOption.textContent.split(' (')[0];
 
   if (target.id !== 'all') {
-    for (const key in groups) {
-      filteredGroups[key] = [...groups[key]].filter((vacancy) => {
-        return vacancy.categories.location.includes(text);
+    for (const key in teams) {
+      filteredTeams[key] = [...teams[key]].filter((vacancy) => {
+        return vacancy.categories.location === text;
       });
     }
   } else {
-    filteredGroups = { ...groups };
+    filteredTeams = { ...teams };
   }
 
-  countGroupedVacancies(teamSelect, filteredGroups);
+  countGroupedVacancies(teamSelect, filteredTeams);
   basicOption.textContent = text;
   renderVacancies(teamText);
 }
@@ -122,7 +132,7 @@ function chooseLocation(target, basicOption) {
 function renderVacancies(text) {
   list.innerHTML = '';
 
-  const vacanciesToShow = filteredGroups[text];
+  const vacanciesToShow = filteredTeams[text];
 
   if (!vacanciesToShow || vacanciesToShow.length === 0) {
     const noVacancies = document.createElement('p');
@@ -169,10 +179,12 @@ async function startApplication() {
   try {
     const vacancies = await getData();
 
-    createGroups(vacancies);
-    filteredGroups = { ...groups };
+    createGroups(vacancies, teams, 'team');
+    createGroups(vacancies, locations, 'location');
+    filteredTeams = { ...teams };
 
-    countGroupedVacancies(teamSelect, groups);
+    countGroupedVacancies(teamSelect, teams);
+    countGroupedVacancies(locationSelect, locations);
     setBasicOption(basicLocationOption);
 
     toggleSelect(

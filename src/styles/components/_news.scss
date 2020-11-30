@@ -55,7 +55,7 @@
   &__wrapper {
     height: 100%;
 
-    padding: 77px 20px 50px 35px;
+    padding: 75px 20px 50px 30px;
     display: flex;
     flex-direction: column;
     text-align: start;
@@ -94,7 +94,7 @@
     object-fit: contain;
   }
 
-  @media (max-width: 480px) {
+  @media (max-width: $sm-breakpoint) {
     &__quotes {
       font-size: 100px;
       line-height: 40px;
@@ -116,7 +116,7 @@
     }
 
     &__wrapper {
-      padding: 77px 20px 50px 35px;
+      padding: 75px 20px 50px 30px;
     }
 
     &__image-wrapper {

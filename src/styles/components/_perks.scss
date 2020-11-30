@@ -1,5 +1,5 @@
 .perks {
-  padding: 90px 48px 60px;
+  padding: 50px;
   text-align: center;
 
   &__title {
@@ -17,7 +17,7 @@
     margin-bottom: 52px;
   }
 
-  @media (max-width: 995px) {
+  @media (max-width: $xl-breakpoint) {
     padding: 24px;
 
     &__title {

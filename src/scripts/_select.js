@@ -24,22 +24,28 @@ function createGroups(vacancies) {
 }
 
 function countGroupedVacancies(select, teams) {
-  const options = select.querySelectorAll('.js-option');
+  const set = Object.keys(teams);
+  const optionsList = select.querySelector('.js-options');
 
-  options.forEach((option) => {
-    const text = option.textContent.split(' (')[0];
+  optionsList.innerHTML = '';
 
-    const length = teams[text] ? teams[text].length : '0';
+  for (const value of set) {
+    const option = document.createElement('li');
+    const length = teams[value].length;
 
-    option.textContent = `${text} (${length})`;
-  });
+    option.classList.add('js-option');
+    option.classList.add('select__option');
+    option.textContent = `${value} (${length})`;
+    optionsList.append(option);
+  }
 
-  setBasicOption(basicTeamOption, options);
+  setBasicOption(basicTeamOption);
 }
 
-function setBasicOption(basicOption, options) {
+function setBasicOption(basicOption) {
   const wrapper = basicOption.closest('.js-group');
-  const option = wrapper.querySelectorAll('.js-option')[0];
+  const options = wrapper.querySelectorAll('.js-option');
+  const option = options[0];
   const text = option.textContent;
 
   if (basicOption.textContent) {
@@ -85,16 +91,16 @@ function toggleSelect(select, func, basicOption, selectPurpose) {
   });
 }
 
-function chooseTeam(target, select) {
+function chooseTeam(target, basicOption) {
   const text = target.textContent;
-  const team = text.split(' ')[0];
+  const team = text.split(' (')[0];
 
-  select.textContent = text;
+  basicOption.textContent = text;
 
   renderVacancies(team);
 }
 
-function chooseLocation(target, select) {
+function chooseLocation(target, basicOption) {
   const text = target.textContent;
   const teamText = basicTeamOption.textContent.split(' (')[0];
 
@@ -107,9 +113,9 @@ function chooseLocation(target, select) {
   } else {
     filteredGroups = { ...groups };
   }
-  countGroupedVacancies(teamSelect, filteredGroups);
 
-  select.textContent = text;
+  countGroupedVacancies(teamSelect, filteredGroups);
+  basicOption.textContent = text;
   renderVacancies(teamText);
 }
 

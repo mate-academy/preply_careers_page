@@ -52,11 +52,8 @@
   }
 
   &__img {
+    width: 100%;
     align-self: flex-end;
-
-    &--center {
-      align-self: center;
-    }
   }
 
   &__btn {

@@ -19,7 +19,7 @@
     object-fit: contain;
     object-position: bottom right;
     width: auto;
-    height: 265px;
+    height: 300px;
   }
 
   &--customer {
@@ -105,6 +105,12 @@
     text-align: right;
     color: $text-color-light;
     transform: rotate(180deg);
+  }
+
+  @media (max-width: $xl-breakpoint) {
+    &__image {
+      height: 265px;
+    }
   }
 
   @media (max-width: $md-breakpoint) {

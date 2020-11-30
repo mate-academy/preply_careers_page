@@ -15,4 +15,8 @@
   @media (max-width: $lg-breakpoint) {
     padding: 50px 20px;
   }
+
+  @media (max-width: $sm-breakpoint) {
+    padding: 30px 10px;
+  }
 }

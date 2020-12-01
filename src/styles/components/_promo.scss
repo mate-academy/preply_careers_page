@@ -125,6 +125,7 @@
         font-size: 9px;
         text-align: center;
         color: $text-color-light;
+        margin-bottom: 5px;
       }
 
       div {
@@ -151,6 +152,7 @@
         font-weight: bold;
         font-size: 14px;
         color: $text-color-light;
+        margin-bottom: 5px;
       }
 
       div {
@@ -167,16 +169,6 @@
 
       @media (max-width: $md-breakpoint) {
         display: flex;
-      }
-
-      p {
-        font-size: 9px;
-        text-align: center;
-        color: $text-color-light;
-      }
-
-      div {
-        margin-bottom: 30%;
       }
     }
   }

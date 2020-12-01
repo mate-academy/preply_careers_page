@@ -137,7 +137,7 @@ function renderVacancies(text) {
   if (!vacanciesToShow || vacanciesToShow.length === 0) {
     const noVacancies = document.createElement('p');
 
-    noVacancies.textContent = 'No vacancies available here';
+    noVacancies.textContent = 'Your dream position is not opened yet';
     list.append(noVacancies);
 
     return;
@@ -175,7 +175,7 @@ function renderError() {
   `;
 }
 
-async function startApplication() {
+export async function startApplication() {
   try {
     const vacancies = await getData();
 
@@ -199,5 +199,3 @@ async function startApplication() {
     renderError();
   }
 }
-
-startApplication();

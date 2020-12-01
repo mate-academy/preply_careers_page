@@ -39,7 +39,7 @@
     color: $text-color-dark;
   }
 
-  @media (max-width: 640px) {
+  @media (max-width: $sm-breakpoint) {
     &__image {
       height: 35px;
       width: 35px;
@@ -47,7 +47,7 @@
     }
 
     &__title {
-      @include font-style-bold(20px, 22px);
+      font-size: 20px;
     }
   }
 }

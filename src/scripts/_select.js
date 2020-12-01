@@ -175,7 +175,7 @@ function renderError() {
   `;
 }
 
-async function startApplication() {
+export async function startApplication() {
   try {
     const vacancies = await getData();
 
@@ -199,5 +199,3 @@ async function startApplication() {
     renderError();
   }
 }
-
-startApplication();

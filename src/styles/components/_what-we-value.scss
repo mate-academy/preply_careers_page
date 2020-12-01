@@ -15,12 +15,17 @@
   @media (max-width: $lg-breakpoint) {
     padding: 50px 20px;
 
-    &__title {
-      font-size: 38px;
-    }
-
     &__description {
       font-size: 16px;
+      line-height: 26px;
+    }
+  }
+
+  @media (max-width: $sm-breakpoint) {
+    padding: 30px 10px;
+
+    &__title {
+      font-size: 38px;
     }
   }
 

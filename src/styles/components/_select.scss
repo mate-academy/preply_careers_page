@@ -25,13 +25,9 @@
     border-radius: 10px;
     border: none;
     border-bottom: 1px solid transparent;
-    padding: 28px 39px;
+    padding: 1em;
 
     transition: background-color 0.2s;
-
-    @media (max-width: $md-breakpoint) {
-      padding: 15px 20px;
-    }
 
     &::after {
       content: url("../images/vacancies/arrow-down.svg");
